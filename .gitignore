@@ -1,0 +1,42 @@
+# === OS ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Editors / IDEs ===
+.vscode/
+.idea/
+*.swp
+
+# === Node (if ever added) ===
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === Dev artifacts / logs ===
+*.log
+test-results/
+playwright-report/
+.playwright/
+/temp-screenshots/
+
+# === Temp review / QA screenshots (not site assets) ===
+/_signoff/
+
+# === Leads / data exports / secrets — never in repo ===
+*.csv
+*.xlsx
+*.xls
+/leads/
+/exports/
+.env
+.env.*
+*.env
+
+# === Heavy raw image originals ===
+# The site serves the optimised .jpg files in images/ai/. Raw PNG sources where an
+# optimised .jpg twin already exists must not be committed (e.g. the removed hero-day.png).
+# Do NOT add a blanket *.png ignore — the site uses real .png assets (logos, certs).
+# FLAGGED + excluded from this push: unused 10MB raw brand photo. Optimise to .jpg before using.
+images/real/clip11-egr-brand.png
