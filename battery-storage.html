@@ -425,13 +425,13 @@
     .hero {
       position: relative;
       isolation: isolate;
-      min-height: 90vh;                              /* fallback for browsers/webviews without svh */
-      min-height: calc(100svh - var(--announce-h));  /* fill the viewport below the announce bar */
+      min-height: 84vh;                              /* fallback for browsers/webviews without svh */
+      min-height: calc(92svh - var(--announce-h));   /* fill most of the viewport below the announce bar */
       display: flex;
       align-items: center;
-      /* top padding includes nav-height (nav overlaps the hero) + generous breathing room */
-      padding-top: calc(var(--nav-h) + clamp(2.5rem, 4vw, 4rem));
-      padding-bottom: clamp(3rem, 6vw, 5rem);
+      /* top padding includes nav-height (nav overlaps the hero) + breathing room */
+      padding-top: calc(var(--nav-h) + clamp(1.75rem, 3vw, 2.75rem));
+      padding-bottom: clamp(2rem, 4vw, 3.25rem);
       overflow: hidden;
     }
     /* photo + forest overlay */
@@ -462,14 +462,17 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr);
       align-items: center;
-      gap: clamp(2rem, 5vw, 4.5rem);
+      gap: clamp(1rem, 2vw, 1.5rem);
       width: 100%;
+      max-width: 1400px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 2.5vw, 1.5rem);
     }
 
     /* ---- hero copy (left) ---- */
-    .hero-copy { color: var(--color-white); max-width: 40rem; }
+    .hero-copy { color: var(--color-white); max-width: 40rem; align-self: center; }
 
     .eyebrow {
       font-size: 0.8rem;
@@ -531,12 +534,11 @@
 
     /* ---- hero form (right) ---- */
     .hero-form {
-      background: var(--color-white);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-card);
-      padding: clamp(1.85rem, 3vw, 2.75rem);
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
       width: 100%;
-      max-width: 28rem;
+      max-width: 100%;
       margin-left: auto;
     }
     .hero-form .form-eyebrow {
@@ -1543,7 +1545,7 @@
     /* ============================================================
        RESPONSIVE
        ============================================================ */
-    @media (max-width: 980px) {
+    @media (max-width: 1279px) {
       .hero-inner {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1961,7 +1963,7 @@
   <!-- 3. HERO -->
   <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner container">
+      <div class="hero-inner">
 
         <!-- LEFT: offer-led copy -->
         <div class="hero-copy">
@@ -1979,9 +1981,6 @@
 
         <!-- RIGHT: quote form slot (placeholder only — real form is a GHL embed) -->
         <aside class="hero-form reveal d3" aria-label="Get your free quote">
-          <p class="form-eyebrow">Free · No obligation</p>
-          <h2>Get your free quote</h2>
-          <p class="form-sub">Name, phone &amp; eircode — that's all we need to get started.</p>
 
             <!-- GHL inline form (live) — "Website Form" ddNqhkTsSWptRFeCn2Em. Auto-resized by form_embed.js. -->
             <div class="form-embed">
@@ -2000,10 +1999,9 @@
                 data-layout-iframe-id="inline-ddNqhkTsSWptRFeCn2Em"
                 data-form-id="ddNqhkTsSWptRFeCn2Em"
                 title="Get your free quote"
-                style="width:100%;min-height:782px;border:none;border-radius:8px;display:block">
+                style="width:100%;min-height:880px;border:none;border-radius:8px;display:block">
               </iframe>
             </div>
-          <p class="form-foot"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="128 72 128 128 184 128"/></svg>Typical callback: <strong>within the hour</strong></p>
         </aside>
 
       </div>
