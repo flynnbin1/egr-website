@@ -1892,8 +1892,8 @@
     .trust-row { justify-content: center; }
 
     /* get-a-quote: content (left) + GHL form (right) */
-    .quote-main { padding-block: var(--section-pad); background: var(--color-white); }
-    .quote-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); gap: clamp(1rem, 2vw, 2rem); align-items: start; }
+    .quote-main { padding-block: clamp(2rem, 3.5vw, 3rem); background: var(--color-white); }
+    .quote-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); gap: clamp(1rem, 2vw, 2rem); align-items: start; max-width: 1200px; }
     .quote-content { max-width: none; }
     .quote-ticks { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; gap: 1rem; max-width: 26rem; text-align: left; }
     .quote-ticks li { display: flex; gap: 0.75rem; align-items: flex-start; }
