@@ -1689,6 +1689,10 @@
       .nav-links .nav-dd-trigger { color: var(--color-white); }
       .nav-links .nav-dd-link { color: rgba(var(--rgb-white), 0.85); }
       .nav-links .dd-caret { color: rgba(var(--rgb-white), 0.6); }
+      /* keep drawer links readable (white) even when the nav is in its scrolled (white-bar) state */
+      .nav.scrolled .nav-links a.link,
+      .nav.scrolled .nav-links .nav-dd-trigger { color: var(--color-white); }
+      .nav.scrolled .nav-links .nav-dd-link { color: rgba(var(--rgb-white), 0.85); }
 
       /* amber CTA pinned to the bottom; the link list scrolls behind it */
       .nav-links .btn-cta { order: 99; margin-top: auto; position: sticky; bottom: 0; justify-content: center; }
