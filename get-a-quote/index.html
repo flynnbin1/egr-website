@@ -1893,15 +1893,15 @@
 
     /* get-a-quote: content (left) + GHL form (right) */
     .quote-main { padding-block: var(--section-pad); background: var(--color-white); }
-    .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-    .quote-content { max-width: 34rem; }
-    .quote-ticks { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; gap: 1rem; }
+    .quote-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
+    .quote-content { max-width: 640px; margin-inline: auto; text-align: center; }
+    .quote-ticks { list-style: none; padding: 0; margin: 1.75rem auto 0; display: grid; gap: 1rem; max-width: 26rem; text-align: left; }
     .quote-ticks li { display: flex; gap: 0.75rem; align-items: flex-start; }
     .quote-tick-ic { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: rgba(var(--rgb-accent), 0.15); color: var(--color-primary); }
     .quote-tick-ic svg { width: 17px; height: 17px; }
     .quote-ticks li > span:last-child { color: var(--color-text); font-weight: 500; padding-top: 3px; }
-    .quote-form-col { position: sticky; top: calc(var(--nav-h) + 1.5rem); }
-    .quote-form-card { max-width: 100%; margin-left: 0; }
+    .quote-form-col { position: static; }
+    .quote-form-card { max-width: 860px; margin-inline: auto; }
     #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
     @media (max-width: 860px) {
       .quote-grid { grid-template-columns: 1fr; }

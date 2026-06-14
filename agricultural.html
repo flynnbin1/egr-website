@@ -462,9 +462,9 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
-      gap: clamp(1.5rem, 3vw, 3rem);
+      gap: clamp(2rem, 5vw, 4.5rem);
       width: 100%;
     }
 
@@ -536,7 +536,7 @@
       box-shadow: var(--shadow-card);
       padding: clamp(1.85rem, 3vw, 2.75rem);
       width: 100%;
-      max-width: 100%;
+      max-width: 28rem;
       margin-left: auto;
     }
     .hero-form .form-eyebrow {
@@ -1948,7 +1948,6 @@
     @media (max-width: 560px) { .cookie-bar-actions { width: 100%; } .cookie-bar-actions button { flex: 1; } }
     img.svc-intro-img, img.savings-img, img.panels-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
     /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
-    .hero-form.reveal { padding: clamp(1.5rem, 2.5vw, 2rem); }
   </style>
 </head>
 <body>
