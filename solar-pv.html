@@ -425,13 +425,13 @@
     .hero {
       position: relative;
       isolation: isolate;
-      min-height: 90vh;                              /* fallback for browsers/webviews without svh */
-      min-height: calc(100svh - var(--announce-h));  /* fill the viewport below the announce bar */
+      min-height: 84vh;                              /* fallback for browsers/webviews without svh */
+      min-height: calc(92svh - var(--announce-h));   /* fill most of the viewport below the announce bar */
       display: flex;
       align-items: center;
-      /* top padding includes nav-height (nav overlaps the hero) + generous breathing room */
-      padding-top: calc(var(--nav-h) + clamp(2.5rem, 4vw, 4rem));
-      padding-bottom: clamp(3rem, 6vw, 5rem);
+      /* top padding includes nav-height (nav overlaps the hero) + breathing room */
+      padding-top: calc(var(--nav-h) + clamp(1.75rem, 3vw, 2.75rem));
+      padding-bottom: clamp(2rem, 4vw, 3.25rem);
       overflow: hidden;
     }
     /* photo + forest overlay */
