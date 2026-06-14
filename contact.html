@@ -1892,7 +1892,8 @@
     .cd-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: rgba(var(--rgb-forest), 0.6); }
     .cd-val { color: var(--color-text); font-weight: 500; text-decoration: none; }
     a.cd-val:hover { color: var(--color-primary); text-decoration: underline; }
-    .contact-form { max-width: 100%; margin-left: 0; }
+    .contact-form { max-width: 800px; margin-inline: auto; }
+    .contact-formsection { padding-block: var(--section-pad); background: var(--color-surface); }
     .contact-map { padding: 0 0 var(--section-pad); background: var(--color-white); }
     .map-frame { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-card); line-height: 0; }
     .map-frame iframe { width: 100%; height: 440px; border: 0; display: block; }
@@ -2038,41 +2039,41 @@
           </a>
         </div>
 
-        <!-- RIGHT: contact form (GoHighLevel embed placeholder — NOT a native form) -->
-        <aside class="hero-form contact-form" aria-label="Send us a message">
-          <p class="form-eyebrow">We reply fast</p>
-          <h2>Send us a message</h2>
-          <p class="form-sub">Drop us your details and we'll be in touch.</p>
-            <!-- GHL inline form (live) — "Website Form" ddNqhkTsSWptRFeCn2Em. Auto-resized by form_embed.js. -->
-            <div class="form-embed">
-              <iframe
-                src="https://link.flowdagency.ai/widget/form/ddNqhkTsSWptRFeCn2Em"
-                id="inline-ddNqhkTsSWptRFeCn2Em"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Website Form"
-                data-height="782"
-                data-layout-iframe-id="inline-ddNqhkTsSWptRFeCn2Em"
-                data-form-id="ddNqhkTsSWptRFeCn2Em"
-                title="Get your free quote"
-                style="width:100%;min-height:782px;border:none;border-radius:8px;display:block">
-              </iframe>
-            </div>        </aside>
+        <!-- RIGHT: location map -->
+        <div class="map-frame">
+          <iframe title="EGR Solar &mdash; Unit 10, Tipperary Technology Park, Rosanna Road, Tipperary, E34 H725" src="https://www.google.com/maps?q=Unit%2010%2C%20Tipperary%20Technology%20Park%2C%20Rosanna%20Road%2C%20Tipperary%2C%20E34%20H725&amp;output=embed" width="100%" height="440" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
 
       </div>
     </section>
 
-    <!-- GOOGLE MAP -->
-    <section class="contact-map" aria-label="Our location on Google Maps">
+    <!-- SEND US A MESSAGE (full-width form) -->
+    <section class="contact-formsection" aria-labelledby="contact-form-title">
       <div class="container">
-        <div class="map-frame">
-          <iframe title="EGR Solar &mdash; Unit 10, Tipperary Technology Park, Rosanna Road, Tipperary, E34 H725" src="https://www.google.com/maps?q=Unit%2010%2C%20Tipperary%20Technology%20Park%2C%20Rosanna%20Road%2C%20Tipperary%2C%20E34%20H725&amp;output=embed" width="100%" height="440" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        </div>
+        <aside class="hero-form contact-form" aria-label="Send us a message">
+          <p class="form-eyebrow">We reply fast</p>
+          <h2 id="contact-form-title">Send us a message</h2>
+          <p class="form-sub">Drop us your details and we'll be in touch.</p>
+          <div class="form-embed">
+            <iframe
+              src="https://link.flowdagency.ai/widget/form/ddNqhkTsSWptRFeCn2Em"
+              id="inline-ddNqhkTsSWptRFeCn2Em"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Website Form"
+              data-height="782"
+              data-layout-iframe-id="inline-ddNqhkTsSWptRFeCn2Em"
+              data-form-id="ddNqhkTsSWptRFeCn2Em"
+              title="Send us a message"
+              style="width:100%;min-height:880px;border:none;border-radius:8px;display:block">
+            </iframe>
+          </div>
+        </aside>
       </div>
     </section>
 
