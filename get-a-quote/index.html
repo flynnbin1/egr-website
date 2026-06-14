@@ -1893,19 +1893,20 @@
 
     /* get-a-quote: content (left) + GHL form (right) */
     .quote-main { padding-block: var(--section-pad); background: var(--color-white); }
-    .quote-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
-    .quote-content { max-width: 640px; margin-inline: auto; text-align: center; }
-    .quote-ticks { list-style: none; padding: 0; margin: 1.75rem auto 0; display: grid; gap: 1rem; max-width: 26rem; text-align: left; }
+    .quote-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr); gap: clamp(1rem, 2vw, 2rem); align-items: start; }
+    .quote-content { max-width: none; }
+    .quote-ticks { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; gap: 1rem; max-width: 26rem; text-align: left; }
     .quote-ticks li { display: flex; gap: 0.75rem; align-items: flex-start; }
     .quote-tick-ic { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: rgba(var(--rgb-accent), 0.15); color: var(--color-primary); }
     .quote-tick-ic svg { width: 17px; height: 17px; }
     .quote-ticks li > span:last-child { color: var(--color-text); font-weight: 500; padding-top: 3px; }
     .quote-form-col { position: static; }
-    .quote-form-card { max-width: 860px; margin-inline: auto; }
+    .quote-form-card { max-width: 100%; margin-inline: 0; }
     #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
-    @media (max-width: 860px) {
+    @media (max-width: 1240px) {
       .quote-grid { grid-template-columns: 1fr; }
-      .quote-form-col { position: static; }
+      .quote-content { max-width: 640px; margin-inline: auto; text-align: center; }
+      .quote-ticks { margin-inline: auto; }
     }
     /* ===== cookie consent bar (GDPR) ===== */
     .cookie-bar { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 1000; max-width: 64rem; margin-inline: auto; background: var(--color-forest); color: var(--color-white); border-radius: var(--radius-lg); box-shadow: 0 12px 44px rgba(0,0,0,0.28); padding: clamp(1rem, 2.5vw, 1.4rem) clamp(1.1rem, 3vw, 1.6rem); display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.5rem; }
@@ -2038,10 +2039,9 @@
                 data-layout-iframe-id="inline-ddNqhkTsSWptRFeCn2Em"
                 data-form-id="ddNqhkTsSWptRFeCn2Em"
                 title="Get your free solar quote"
-                style="width:100%;min-height:782px;border:none;border-radius:8px;display:block">
+                style="width:100%;min-height:880px;border:none;border-radius:8px;display:block">
               </iframe>
             </div>
-            <p class="form-foot"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="128 72 128 128 184 128"/></svg>Typical callback: <strong>within the hour</strong></p>
           </aside>
         </div>
 
