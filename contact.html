@@ -1882,7 +1882,7 @@
     }
 
     /* ---- contact page ---- */
-    .contact-main { padding-block: var(--section-pad); background: var(--color-white); }
+    .contact-main { padding: var(--section-pad) 0 clamp(2rem, 4vw, 3rem); background: var(--color-white); }
     .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
     .contact-list { list-style: none; padding: 0; margin: 1.5rem 0 2rem; display: grid; gap: 1.2rem; }
     .contact-list li { display: flex; gap: 0.9rem; align-items: flex-start; }
@@ -1892,8 +1892,8 @@
     .cd-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: rgba(var(--rgb-forest), 0.6); }
     .cd-val { color: var(--color-text); font-weight: 500; text-decoration: none; }
     a.cd-val:hover { color: var(--color-primary); text-decoration: underline; }
-    .contact-form { max-width: 800px; margin-inline: auto; background: transparent; box-shadow: none; padding: 0; }
-    .contact-formsection { padding-block: var(--section-pad); background: var(--color-surface); }
+    .contact-form { max-width: 1080px; margin-inline: auto; background: transparent; box-shadow: none; padding: 0; }
+    .contact-formsection { padding-block: clamp(2rem, 3.5vw, 3rem); background: var(--color-surface); }
     .contact-map { padding: 0 0 var(--section-pad); background: var(--color-white); }
     .map-frame { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-card); line-height: 0; }
     .map-frame iframe { width: 100%; height: 440px; border: 0; display: block; }
