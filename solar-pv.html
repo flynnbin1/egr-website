@@ -462,7 +462,7 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: center;
       gap: clamp(2rem, 5vw, 4.5rem);
       width: 100%;
@@ -536,7 +536,7 @@
       box-shadow: var(--shadow-card);
       padding: clamp(1.85rem, 3vw, 2.75rem);
       width: 100%;
-      max-width: 28rem;
+      max-width: 100%;
       margin-left: auto;
     }
     .hero-form .form-eyebrow {
