@@ -2021,14 +2021,25 @@
         <!-- RIGHT: GHL form (placeholder only — real form is a GHL embed) -->
         <div class="quote-form-col" id="quote-form">
           <aside class="hero-form quote-form-card" aria-label="Get your free quote">
-            <div class="form-slot">
-              <!-- =========================================================
-                   GHL EMBED GOES HERE  (FLAG: EGR to supply)
-                   Paste the GoHighLevel quote-form embed in place of the
-                   .slot-msg below. Fields: Name, Phone, Eircode.
-                   Do not build a native form — EGR supplies the embed.
-                   ========================================================= -->
-              <p class="slot-msg">Quote form (GoHighLevel) loads here</p>
+            <!-- GHL inline form (live) — "Website Form" ddNqhkTsSWptRFeCn2Em. Auto-resized by form_embed.js (loaded once before </body>). -->
+            <div class="form-embed">
+              <iframe
+                src="https://link.flowdagency.ai/widget/form/ddNqhkTsSWptRFeCn2Em"
+                id="inline-ddNqhkTsSWptRFeCn2Em"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Website Form"
+                data-height="782"
+                data-layout-iframe-id="inline-ddNqhkTsSWptRFeCn2Em"
+                data-form-id="ddNqhkTsSWptRFeCn2Em"
+                title="Get your free solar quote"
+                style="width:100%;min-height:782px;border:none;border-radius:8px;display:block">
+              </iframe>
             </div>
             <p class="form-foot"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="128 72 128 128 184 128"/></svg>Typical callback: <strong>within the hour</strong></p>
           </aside>
@@ -2415,5 +2426,7 @@
       if (r) r.addEventListener('click', reject);
     })();
   </script>
+  <!-- GoHighLevel form auto-resize (loaded once; resizes any GHL inline iframe on the page) -->
+  <script src="https://link.flowdagency.ai/js/form_embed.js"></script>
 </body>
 </html>
