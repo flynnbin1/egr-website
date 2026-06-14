@@ -1950,6 +1950,7 @@
     @media (max-width: 560px) { .cookie-bar-actions { width: 100%; } .cookie-bar-actions button { flex: 1; } }
     img.svc-intro-img, img.savings-img, img.panels-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
     /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
+    #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
   </style>
 </head>
 <body>
@@ -1995,7 +1996,7 @@
         <a class="link" href="why-egr.html">Why EGR</a>
         <a class="link" href="reviews.html">Reviews</a>
         <a class="link" href="contact.html">Contact</a>
-        <a class="btn-cta" href="get-a-quote/index.html">Get a Quote</a>
+        <a class="btn-cta" href="#quote-form">Get a Quote</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -2027,7 +2028,7 @@
         </div>
 
         <!-- RIGHT: quote form slot (placeholder only — real form is a GHL embed) -->
-        <aside class="hero-form reveal d3" aria-label="Get your free quote">
+        <aside class="hero-form reveal d3" id="quote-form" aria-label="Get your free quote">
 
             <!-- GHL inline form (live) — "Website Form" ddNqhkTsSWptRFeCn2Em. Auto-resized by form_embed.js. -->
             <div class="form-embed">

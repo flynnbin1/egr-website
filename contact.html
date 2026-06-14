@@ -1922,6 +1922,7 @@
     .cookie-reject { background: transparent; color: var(--color-white); border-color: rgba(var(--rgb-white), 0.45); }
     .cookie-reject:hover { border-color: var(--color-white); background: rgba(var(--rgb-white), 0.08); }
     @media (max-width: 560px) { .cookie-bar-actions { width: 100%; } .cookie-bar-actions button { flex: 1; } }
+    #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
   </style>
 </head>
 <body>
@@ -1967,7 +1968,7 @@
         <a class="link" href="why-egr.html">Why EGR</a>
         <a class="link" href="reviews.html">Reviews</a>
         <a class="link" href="contact.html">Contact</a>
-        <a class="btn-cta" href="get-a-quote/index.html">Get a Quote</a>
+        <a class="btn-cta" href="#quote-form">Get a Quote</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -2048,7 +2049,7 @@
     </section>
 
     <!-- SEND US A MESSAGE (full-width form) -->
-    <section class="contact-formsection" aria-label="Send us a message">
+    <section class="contact-formsection" id="quote-form" aria-label="Send us a message">
       <div class="container">
         <aside class="hero-form contact-form" aria-label="Send us a message">
           <div class="form-embed">
