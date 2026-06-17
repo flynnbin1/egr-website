@@ -36,7 +36,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solar PV Panels in Tipperary &amp; Cork | EGR Solar</title>
-  <meta name="description" content="Tier-one solar PV panels (TW &amp; Jinko) installed across Tipperary, Cork and Munster. €1,800 SEAI grant + 0% VAT fully handled by EGR, up to 30-year warranties. Free quote, 1-hour callback.">
+  <meta name="description" content="Tier-one solar PV panels (Maxeon, TW &amp; Jinko) installed across Tipperary, Cork and Munster. €1,800 SEAI grant + 0% VAT fully handled by EGR, up to 30-year warranties. Free quote, 1-hour callback.">
 
   <!-- Fonts: Poppins (headings) + Inter (body) per brand.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1777,6 +1777,14 @@
     }
 
     /* what you'll save: stat cards */
+    /* Brands we install — logo strip (uniform slots; drop real logos into .brand-logo) */
+    .brands { background: var(--color-surface); padding-block: var(--section-pad); }
+    .brand-strip { list-style: none; padding: 0; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(0.75rem, 1.5vw, 1.25rem); max-width: 64rem; }
+    .brand-logo { display: flex; align-items: center; justify-content: center; height: 96px; padding: 1rem 1.25rem; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); }
+    .brand-logo img { max-height: 48px; max-width: 100%; width: auto; display: block; }
+    .brand-logo-ph { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); text-align: center; line-height: 1.25; }
+    @media (max-width: 860px) { .brand-strip { grid-template-columns: repeat(3, 1fr); max-width: 40rem; } }
+    @media (max-width: 520px) { .brand-strip { grid-template-columns: repeat(2, 1fr); max-width: 22rem; } }
     .savings { background: var(--color-white); padding-block: var(--section-pad); }
     .stat-grid {
       display: grid;
@@ -2037,7 +2045,7 @@
         <div class="section-head">
           <span class="sec-eyebrow">The panels</span>
           <h2 id="panels-title">Tier-one panels, built to last decades</h2>
-          <p class="section-intro">We fit tier-one panels from TW (Tongwei) and Jinko — two of the world's leading solar manufacturers — so what's on your roof keeps performing for years.</p>
+          <p class="section-intro">We fit tier-one panels from Maxeon, TW (Tongwei) and Jinko — three of the world's leading solar manufacturers — so what's on your roof keeps performing for years.</p>
         </div>
 
         <div class="panel-highlight">
@@ -2056,7 +2064,7 @@
               <span class="pp-ic" aria-hidden="true"><!-- Phosphor: medal --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><circle cx="128" cy="96" r="80"/><circle cx="128" cy="96" r="48"/><polyline points="176 160 176 240 127.99 216 80 240 80 160.01"/></svg></span>
               <div class="pp-text">
                 <h3>World-leading makers</h3>
-                <p>Panels from TW and Jinko — global leaders in solar technology, not budget no-name brands.</p>
+                <p>Panels from Maxeon, TW and Jinko — global leaders in solar technology, not budget no-name brands.</p>
               </div>
             </li>
             <li class="panel-point">
@@ -2075,6 +2083,25 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <!-- BRANDS WE INSTALL -->
+    <section class="brands" aria-labelledby="brands-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Brands we install</span>
+          <h2 id="brands-title">Tier-one equipment from trusted manufacturers</h2>
+          <p class="section-intro">Panels, inverters and storage from the global manufacturers we trust to perform and last &mdash; the same kit on every install.</p>
+        </div>
+        <!-- LOGO SLOTS: replace each <span class="brand-logo-ph"> with <img src="images/brands/<name>.svg" alt="<Brand> logo" loading="lazy"> when the real logo files are supplied. -->
+        <ul class="brand-strip" role="list">
+          <li class="brand-logo"><span class="brand-logo-ph">Maxeon</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">Jinko Solar</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">Sigenergy</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">Tongwei&nbsp;/ TW&nbsp;Solar</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">SAJ</span></li>
+        </ul>
       </div>
     </section>
 

@@ -1910,6 +1910,13 @@
     .brand-card .b-ic svg { width: 24px; height: 24px; }
     .brand-card h3 { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; color: var(--color-text); margin: 0; }
     .brand-card p { font-size: 0.85rem; color: var(--color-text-muted); margin: 0.1rem 0 0; }
+    /* Brands we install — logo strip (uniform slots; drop real logos into .brand-logo) */
+    .brand-strip { list-style: none; padding: 0; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(0.75rem, 1.5vw, 1.25rem); max-width: 64rem; }
+    .brand-logo { display: flex; align-items: center; justify-content: center; height: 96px; padding: 1rem 1.25rem; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); }
+    .brand-logo img { max-height: 48px; max-width: 100%; width: auto; display: block; }
+    .brand-logo-ph { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); text-align: center; line-height: 1.25; }
+    @media (max-width: 860px) { .brand-strip { grid-template-columns: repeat(3, 1fr); max-width: 40rem; } }
+    @media (max-width: 520px) { .brand-strip { grid-template-columns: repeat(2, 1fr); max-width: 22rem; } }
     .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: clamp(1.25rem, 2.5vw, 2rem); max-width: 62rem; margin: 0 auto; }
     .team-card { display: flex; flex-direction: column; }
     .team-photo { aspect-ratio: 1 / 1; margin-bottom: 1rem; }
@@ -2092,6 +2099,25 @@
           <span class="cert-badge cert-badge--text">HPAI</span>
         </div>
         <p class="accred-note">Safe Electric registered &middot; SEAI registered &middot; HPAI &mdash; Heat Pump Association of Ireland.</p>
+      </div>
+    </section>
+
+    <!-- BRANDS WE INSTALL -->
+    <section class="brands" aria-labelledby="brands-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Brands we install</span>
+          <h2 id="brands-title">Tier-one equipment from trusted manufacturers</h2>
+          <p class="section-intro">Panels, inverters and storage from the global manufacturers we trust to perform and last &mdash; the same kit on every install.</p>
+        </div>
+        <!-- LOGO SLOTS: replace each <span class="brand-logo-ph"> with <img src="images/brands/<name>.svg" alt="<Brand> logo" loading="lazy"> when the real logo files are supplied. -->
+        <ul class="brand-strip" role="list">
+          <li class="brand-logo"><span class="brand-logo-ph">Maxeon</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">Jinko Solar</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">Sigenergy</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">Tongwei&nbsp;/ TW&nbsp;Solar</span></li>
+          <li class="brand-logo"><span class="brand-logo-ph">SAJ</span></li>
+        </ul>
       </div>
     </section>
 
