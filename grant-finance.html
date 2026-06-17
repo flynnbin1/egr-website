@@ -35,8 +35,8 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solar Panels in Wicklow | €1,800 SEAI Grant | EGR Solar</title>
-  <meta name="description" content="Solar panels across Wicklow — Bray & Greystones. €1,800 SEAI grant + 0% VAT handled by EGR, up to 30-year warranties. Free quote, 1-hour callback.">
+  <title>SEAI Grant &amp; Spreading the Cost | Solar Made Affordable | EGR Solar</title>
+  <meta name="description" content="The SEAI solar grant (up to €1,800) and 0% VAT explained — plus how to spread the cost of your system into manageable monthly payments. EGR handle the grant and BER paperwork for you. Free quote.">
 
   <!-- Fonts: Poppins (headings) + Inter (body) per brand.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
 
   <!-- Preload hero LCP image. NOTE: AI-generated hero (images/ai/) used as a CSS background;
        swap to a real wide install photo + real <img alt="…"> when available (a11y/SEO). -->
-  <link rel="preload" as="image" href="../images/ai/why-solar-panels.jpg">
+  <link rel="preload" as="image" href="images/ai/why-solar-panels.jpg">
 
   <style>
     /* ============================================================
@@ -425,13 +425,11 @@
     .hero {
       position: relative;
       isolation: isolate;
-      min-height: 84vh;                              /* fallback for browsers/webviews without svh */
-      min-height: calc(92svh - var(--announce-h));   /* fill most of the viewport below the announce bar */
       display: flex;
       align-items: center;
-      /* top padding includes nav-height (nav overlaps the hero) + breathing room */
-      padding-top: calc(var(--nav-h) + clamp(1.75rem, 3vw, 2.75rem));
-      padding-bottom: clamp(2rem, 4vw, 3.25rem);
+      /* compact banner — clear the nav + modest breathing room (no full-viewport fill) */
+      padding-top: calc(var(--nav-h) + clamp(1.5rem, 3vw, 2.5rem));
+      padding-bottom: clamp(2rem, 4vw, 3rem);
       overflow: hidden;
     }
     /* photo + forest overlay */
@@ -440,7 +438,7 @@
       position: absolute;
       inset: 0;
       z-index: -2;
-      background-image: url("../images/ai/why-solar-panels.jpg");
+      background-image: url("images/ai/why-solar-panels.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -462,17 +460,14 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr);
+      grid-template-columns: 1fr;
       align-items: center;
-      gap: clamp(1rem, 2vw, 1.5rem);
+      gap: clamp(2rem, 5vw, 4.5rem);
       width: 100%;
-      max-width: 1400px;
-      margin-inline: auto;
-      padding-inline: clamp(1rem, 2.5vw, 1.5rem);
     }
 
     /* ---- hero copy (left) ---- */
-    .hero-copy { color: var(--color-white); max-width: 40rem; align-self: center; }
+    .hero-copy { color: var(--color-white); max-width: 40rem; }
 
     .eyebrow {
       font-size: 0.8rem;
@@ -534,11 +529,12 @@
 
     /* ---- hero form (right) ---- */
     .hero-form {
-      background: transparent;
-      box-shadow: none;
-      padding: 0;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: clamp(1.85rem, 3vw, 2.75rem);
       width: 100%;
-      max-width: 100%;
+      max-width: 28rem;
       margin-left: auto;
     }
     .hero-form .form-eyebrow {
@@ -1284,11 +1280,28 @@
         radial-gradient(78% 58% at 50% 38%, rgba(var(--rgb-white), 0.08), transparent 60%),
         linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.25) 100%),
         linear-gradient(160deg, rgba(var(--rgb-forest), 0.92) 0%, rgba(var(--rgb-forest), 0.78) 100%),
-        url("../images/ai/cta-home-sunset.jpg");
+        url("images/ai/cta-home-sunset.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
+    /* === Grant & spreading-the-cost page === */
+    .grant { background: var(--color-white); padding-block: var(--section-pad); }
+    .grant-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 1.75rem); max-width: 56rem; margin: 0 auto; }
+    .grant-tier { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.25rem) 1rem; text-align: center; }
+    .grant-tier .amt { display: block; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.6rem); color: var(--color-primary); line-height: 1; }
+    .grant-tier .sys { display: block; margin-top: 0.6rem; font-size: 0.95rem; color: var(--color-text-muted); }
+    .grant-note { max-width: 46rem; margin: clamp(1.75rem, 3vw, 2.5rem) auto 0; text-align: center; color: var(--color-text-muted); }
+    @media (max-width: 560px) { .grant-tiers { grid-template-columns: 1fr; max-width: 22rem; } }
+    .gf-vat { background: var(--color-surface); padding-block: var(--section-pad); }
+    .gf-spread { background: rgba(var(--rgb-accent), 0.07); border-block: 1px solid rgba(var(--rgb-forest), 0.10); padding-block: var(--section-pad); }
+    .gf-handle { background: var(--color-white); padding-block: var(--section-pad); }
+    .gf-example { max-width: 46rem; margin: clamp(1.75rem, 3vw, 2.5rem) auto 0; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: clamp(1.6rem, 3vw, 2.4rem); }
+    .gf-example .ex-label { display: inline-block; font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-pill); padding: 0.32rem 0.85rem; margin-bottom: 1.1rem; }
+    .gf-example ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem; }
+    .gf-example li { display: flex; gap: 0.8rem; align-items: flex-start; line-height: 1.6; }
+    .gf-example li svg { flex: none; width: 22px; height: 22px; color: var(--color-primary); margin-top: 3px; }
+    .gf-example .ex-foot { margin: 1.2rem 0 0; font-size: 0.85rem; color: var(--color-text-muted); font-style: italic; line-height: 1.6; }
     .final-cta-inner { max-width: 46rem; margin: 0 auto; }
 
     /* white-knockout logo (cropped from its padded square, same technique as the nav) */
@@ -1545,7 +1558,7 @@
     /* ============================================================
        RESPONSIVE
        ============================================================ */
-    @media (max-width: 1279px) {
+    @media (max-width: 980px) {
       .hero-inner {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1889,21 +1902,52 @@
       .bottom-form-copy { max-width: none; }
     }
 
-    /* ---- locations pages (hub + counties) ---- */
-    .locality { background: var(--color-white); padding-block: var(--section-pad); }
-    .locality-links { max-width: 46rem; margin: 1.3rem auto 0; text-align: center; line-height: 1.6; color: var(--color-text-muted); }
-    .locality-links a { color: var(--color-primary); font-weight: 600; }
-    .towns { background: var(--color-surface); padding-block: var(--section-pad); }
-    .town-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 0.7rem; max-width: 62rem; margin: 1.75rem auto 0; }
-    .town { display: inline-flex; align-items: center; gap: 0.5ch; padding: 0.55rem 1.05rem; border-radius: var(--radius-pill); background: var(--color-white); border: 1px solid var(--color-border); font-size: 0.95rem; font-weight: 500; color: var(--color-text); }
-    .town svg { width: 15px; height: 15px; color: var(--color-primary); flex: none; }
-    .town-more { display: inline-flex; align-items: center; padding: 0.55rem 0.5rem; color: var(--color-text-muted); font-style: italic; }
-    .county-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; max-width: 60rem; margin: clamp(2rem, 4vw, 3rem) auto 0; }
-    .county-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.05rem 1.3rem; border-radius: var(--radius); background: var(--color-white); border: 1px solid var(--color-border); color: var(--color-text); font-family: var(--font-heading); font-weight: 600; box-shadow: 0 10px 28px -22px rgba(0,0,0,0.3); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease); }
-    .county-card:hover { transform: translateY(-3px); box-shadow: 0 22px 44px -26px rgba(var(--rgb-forest), 0.5); border-color: var(--color-primary); }
-    .county-card .arrow { color: var(--color-primary); display: inline-flex; transition: transform 0.25s var(--ease); }
-    .county-card .arrow svg { width: 1.1em; height: 1.1em; }
-    .county-card:hover .arrow { transform: translateX(3px); }
+    /* ---- why-egr page ---- */
+    .wstats { background: var(--color-surface); padding-block: var(--section-pad); }
+    .wdiff { background: var(--color-white); padding-block: var(--section-pad); }
+    .warranties { background: var(--color-surface); padding-block: var(--section-pad); }
+    .accreds { background: var(--color-white); padding-block: var(--section-pad); }
+    .brands { background: var(--color-surface); padding-block: var(--section-pad); }
+    .team { background: var(--color-surface); padding-block: var(--section-pad); }
+    .wstat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.5vw, 1.75rem); }
+    @media (max-width: 860px) { .wstat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 460px) { .wstat-grid { grid-template-columns: 1fr; max-width: 22rem; margin-inline: auto; } }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.25rem, 2.5vw, 2rem); }
+    @media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; max-width: 36rem; margin-inline: auto; } }
+    .warranty-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 1.75rem); }
+    @media (max-width: 860px) { .warranty-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .warranty-grid { grid-template-columns: 1fr; max-width: 26rem; margin-inline: auto; } }
+    .accred-note { max-width: 46rem; margin: 1.4rem auto 0; text-align: center; color: var(--color-text-muted); font-size: 0.92rem; }
+    .cert-badge--text { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--color-primary); }
+    .brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 62rem; margin: 0 auto; }
+    @media (max-width: 760px) { .brand-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 440px) { .brand-grid { grid-template-columns: 1fr; max-width: 24rem; margin-inline: auto; } }
+    .brand-card { display: flex; align-items: center; gap: 0.9rem; padding: 1.05rem 1.25rem; border-radius: var(--radius); background: var(--color-white); border: 1px solid var(--color-border); }
+    .brand-card .b-ic { flex: none; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: rgba(var(--rgb-forest), 0.08); color: var(--color-primary); }
+    .brand-card .b-ic svg { width: 24px; height: 24px; }
+    .brand-card h3 { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; color: var(--color-text); margin: 0; }
+    .brand-card p { font-size: 0.85rem; color: var(--color-text-muted); margin: 0.1rem 0 0; }
+    /* Brands we install — logo strip (uniform slots; drop real logos into .brand-logo) */
+    .brand-strip { list-style: none; padding: 0; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(0.75rem, 1.5vw, 1.25rem); max-width: 64rem; }
+    .brand-logo { display: flex; align-items: center; justify-content: center; height: 96px; padding: 1rem 1.25rem; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); }
+    .brand-logo img { max-height: 48px; max-width: 100%; width: auto; display: block; }
+    .brand-logo-ph { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--color-primary); text-align: center; line-height: 1.25; }
+    @media (max-width: 860px) { .brand-strip { grid-template-columns: repeat(3, 1fr); max-width: 40rem; } }
+    @media (max-width: 520px) { .brand-strip { grid-template-columns: repeat(2, 1fr); max-width: 22rem; } }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: clamp(1.25rem, 2.5vw, 2rem); max-width: 62rem; margin: 0 auto; }
+    .team-card { display: flex; flex-direction: column; }
+    .team-photo { aspect-ratio: 1 / 1; margin-bottom: 1rem; }
+    .team-card h3 { font-family: var(--font-heading); font-weight: 600; font-size: 1.12rem; color: var(--color-text); margin: 0; }
+    .team-role { font-size: 0.92rem; font-weight: 600; color: var(--color-primary); margin-top: 0.2rem; }
+    .team-role.is-tbc { color: var(--color-text-muted); font-weight: 500; font-style: italic; }
+
+    /* hero CTA (replaces the removed hero quote form) */
+    .hero-cta { margin-top: 2rem; }
+    /* hero has no form — centre the compact banner content across the full width (matches residential.html) */
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-copy { max-width: 52rem; margin-inline: auto; text-align: center; }
+    .hero .subhead { margin-inline: auto; }
+    .trust-row { justify-content: center; }
 
     /* footer social icons (external profile links) — brand lime-accent green */
     .footer-social { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
@@ -1922,41 +1966,7 @@
     .cookie-reject { background: transparent; color: var(--color-white); border-color: rgba(var(--rgb-white), 0.45); }
     .cookie-reject:hover { border-color: var(--color-white); background: rgba(var(--rgb-white), 0.08); }
     @media (max-width: 560px) { .cookie-bar-actions { width: 100%; } .cookie-bar-actions button { flex: 1; } }
-    img.svc-intro-img, img.savings-img, img.panels-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
-    /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
-    #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Solar panel installation",
-  "name": "Solar Panel Installation in Wicklow",
-  "description": "Residential solar PV design and installation across County Wicklow, Ireland — including Bray, Greystones, Wicklow Town and surrounding areas — with the €1,800 SEAI grant and 0% VAT handled by EGR.",
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "County Wicklow, Ireland"
-  },
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Eco Green Resources Ltd (EGR Solar)",
-    "telephone": "+353818911910",
-    "url": "https://egr.ie/",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Unit 10, Tipperary Technology Park, Rosanna Road",
-      "addressLocality": "Tipperary",
-      "postalCode": "E34 H725",
-      "addressCountry": "IE"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "93"
-    }
-  }
-}
-  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) — FLAG: replace GTM-XXXXXXX -->
@@ -1972,36 +1982,36 @@
   <!-- 2. NAV -->
   <header class="nav" id="nav">
     <div class="nav-inner container">
-      <a href="../index.html" class="nav-logo" aria-label="EGR Solar — Eco Green Resources, home">
-        <img class="logo-white" src="../images/brand/egr-png-trans-logo-white.png" alt="" aria-hidden="true" width="500" height="500">
-        <img class="logo-color" src="../images/brand/egr-png-trans-logo.png" alt="" aria-hidden="true" width="500" height="500">
+      <a href="index.html" class="nav-logo" aria-label="EGR Solar — Eco Green Resources, home">
+        <img class="logo-white" src="images/brand/egr-png-trans-logo-white.png" alt="" aria-hidden="true" width="500" height="500">
+        <img class="logo-color" src="images/brand/egr-png-trans-logo.png" alt="" aria-hidden="true" width="500" height="500">
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Primary">
-        <span class="nav-drawer-logo" aria-hidden="true"><img src="../images/brand/egr-png-trans-logo-white.png" alt="" width="500" height="500"></span>
+        <span class="nav-drawer-logo" aria-hidden="true"><img src="images/brand/egr-png-trans-logo-white.png" alt="" width="500" height="500"></span>
         <button class="nav-close" id="navClose" type="button" aria-label="Close menu"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"/><line x1="200" y1="200" x2="56" y2="56"/></svg></button>
         <div class="nav-dd">
           <button type="button" class="nav-dd-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="sectors-menu">Sectors <svg class="dd-caret" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="208 96 128 176 48 96"/></svg></button>
           <div class="nav-dd-panel" id="sectors-menu" role="menu">
-            <a class="nav-dd-link" role="menuitem" href="../residential.html">Residential</a>
-            <a class="nav-dd-link" role="menuitem" href="../commercial.html">Commercial</a>
-            <a class="nav-dd-link" role="menuitem" href="../agricultural.html">Agricultural</a>
+            <a class="nav-dd-link" role="menuitem" href="residential.html">Residential</a>
+            <a class="nav-dd-link" role="menuitem" href="commercial.html">Commercial</a>
+            <a class="nav-dd-link" role="menuitem" href="agricultural.html">Agricultural</a>
           </div>
         </div>
         <div class="nav-dd">
           <button type="button" class="nav-dd-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">Services <svg class="dd-caret" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="208 96 128 176 48 96"/></svg></button>
           <div class="nav-dd-panel" id="services-menu" role="menu">
-            <a class="nav-dd-link" role="menuitem" href="../solar-pv.html">Solar PV</a>
-            <a class="nav-dd-link" role="menuitem" href="../battery-storage.html">Battery Storage</a>
-            <a class="nav-dd-link" role="menuitem" href="../ev-charging.html">EV Charging</a>
-            <a class="nav-dd-link" role="menuitem" href="../home-heating.html">Home Heating</a>
+            <a class="nav-dd-link" role="menuitem" href="solar-pv.html">Solar PV</a>
+            <a class="nav-dd-link" role="menuitem" href="battery-storage.html">Battery Storage</a>
+            <a class="nav-dd-link" role="menuitem" href="ev-charging.html">EV Charging</a>
+            <a class="nav-dd-link" role="menuitem" href="home-heating.html">Home Heating</a>
           </div>
         </div>
-        <a class="link" href="index.html">Locations</a>
-        <a class="link" href="../why-egr.html">Why EGR</a>
-        <a class="link" href="../reviews.html">Reviews</a>
-        <a class="link" href="../contact.html">Contact</a>
-        <a class="btn-cta" href="../get-a-quote/index.html">Get a Quote</a>
+        <a class="link" href="locations/index.html">Locations</a>
+        <a class="link" href="why-egr.html">Why EGR</a>
+        <a class="link" href="reviews.html">Reviews</a>
+        <a class="link" href="contact.html">Contact</a>
+        <a class="btn-cta" href="get-a-quote/index.html">Get a Quote</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -2015,16 +2025,19 @@
 
   <!-- 3. HERO -->
   <main id="main" tabindex="-1">
+    <!-- shared star glyph (kept here because the reviews carousel that defined it was removed) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="ph-star" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol>
+    </svg>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
+      <div class="hero-inner container">
 
-        <!-- LEFT: offer-led copy -->
         <div class="hero-copy">
-          <span class="eyebrow reveal d1">Residential Solar · South Leinster</span>
+          <span class="eyebrow reveal d1">Grants &amp; spreading the cost · Munster &amp; South Leinster</span>
           <h1 id="hero-title" class="reveal d2">
-            Solar Panels in <span class="hl">Wicklow</span></h1>
+            Solar for less <span class="hl">than you think</span></h1>
           <p class="subhead reveal d3">
-            Tier-one solar PV across Wicklow, with the €1,800 SEAI grant and 0% VAT fully handled — and a callback within the hour.
+            Between the SEAI grant and 0% VAT, going solar costs far less than most people expect — and you can spread what&rsquo;s left into manageable monthly payments. Here&rsquo;s exactly how it works.
           </p>
           <div class="trust-row reveal d4">
             <span class="chip"><span class="stars"><svg class="star" aria-hidden="true"><use href="#ph-star"/></svg></span> <span class="num">5.0</span> · 93 Google reviews</span>
@@ -2032,334 +2045,90 @@
           </div>
         </div>
 
-        <!-- RIGHT: quote form slot (placeholder only — real form is a GHL embed) -->
-        <aside class="hero-form reveal d3" id="quote-form" aria-label="Get your free quote">
-
-            <!-- GHL inline form (live) — "Website Form" ddNqhkTsSWptRFeCn2Em. Auto-resized by form_embed.js. -->
-            <div class="form-embed">
-              <iframe
-                src="https://link.flowdagency.ai/widget/form/ddNqhkTsSWptRFeCn2Em"
-                id="inline-ddNqhkTsSWptRFeCn2Em"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Website Form"
-                data-height="782"
-                data-layout-iframe-id="inline-ddNqhkTsSWptRFeCn2Em"
-                data-form-id="ddNqhkTsSWptRFeCn2Em"
-                title="Get your free quote"
-                style="width:100%;min-height:880px;border:none;border-radius:8px;display:block">
-              </iframe>
-            </div>
-        </aside>
-
       </div>
     </section>
 
-    <!-- FIGURES: 2,000+ installed (confirmed), €1,800 SEAI grant (confirmed).
-         FLAG: the town list is real, but EGR's actual coverage per town must be confirmed
-         against their true service radius before launch. -->
-    <!-- COUNTY INTRO (unique per county) -->
-    <section class="locality" aria-labelledby="locality-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="sec-eyebrow">Solar across Wicklow</span>
-          <h2 id="locality-title">Local solar installers for Wicklow</h2>
-          <p class="section-intro">From the Wicklow coast at Bray, Greystones, Wicklow Town and Arklow to Blessington up in the hills, EGR installs solar across the Garden of Ireland — for commuter homes and countryside alike.</p>
-        </div>
-        <p class="locality-links">EGR fit the same tier-one panels and handle the €1,800 SEAI grant and 0% VAT wherever you are in Wicklow. Explore <a href="../residential.html">residential solar</a>, the <a href="../grant-finance.html">grant &amp; finance</a> details, or browse <a href="index.html">all the counties we cover</a>.</p>
-      </div>
-    </section>
-
-    <!-- TOWNS WE SERVE (unique per county) -->
-    <section class="towns" aria-labelledby="towns-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="sec-eyebrow">Towns we serve</span>
-          <h2 id="towns-title">Towns we serve in Wicklow</h2>
-          <p class="section-intro">Real local coverage across Wicklow — from the biggest towns to the smallest villages.</p>
-        </div>
-        <div class="town-list">
-          <span class="town"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="104" r="32"/><path d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"/></svg>Bray</span>
-          <span class="town"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="104" r="32"/><path d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"/></svg>Greystones</span>
-          <span class="town"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="104" r="32"/><path d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"/></svg>Wicklow Town</span>
-          <span class="town"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="104" r="32"/><path d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"/></svg>Arklow</span>
-          <span class="town"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="104" r="32"/><path d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z"/></svg>Blessington</span>
-          <span class="town-more">— and everywhere in between</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHAT YOU'LL SAVE — real savings figures -->
-    <section class="savings" aria-labelledby="savings-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="sec-eyebrow">What you'll save</span>
-          <h2 id="savings-title">Real numbers, not vague promises</h2>
-          <p class="section-intro">Here's roughly what solar PV does for a typical Irish home.</p>
-        </div>
-        <div class="savings-split">
-          <div class="savings-stats">
-            <div class="stat-row">
-              <span class="stat-ic" aria-hidden="true"><!-- Phosphor: coins --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="96" cy="84" rx="80" ry="36"/><path d="M16,84v40c0,19.88,35.82,36,80,36s80-16.12,80-36V84"/><line x1="64" y1="117" x2="64" y2="157"/><path d="M176,96.72c36.52,3.34,64,17.86,64,35.28,0,19.88-35.82,36-80,36-19.6,0-37.56-3.17-51.47-8.44"/><path d="M80,159.28V172c0,19.88,35.82,36,80,36s80-16.12,80-36V132"/><line x1="192" y1="165" x2="192" y2="205"/><line x1="128" y1="117" x2="128" y2="205"/></svg></span>
-              <div class="stat-text"><span class="stat-fig">~&euro;200</span><span class="stat-label">saved per year, for every kW of solar installed</span></div>
-            </div>
-            <div class="stat-row">
-              <span class="stat-ic" aria-hidden="true"><!-- Phosphor: lightning --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><polygon points="160 16 144 96 208 120 96 240 112 160 48 136 160 16"/></svg></span>
-              <div class="stat-text"><span class="stat-fig">~4,000 kWh</span><span class="stat-label">generated each year by a typical 4kW system</span></div>
-            </div>
-            <div class="stat-row">
-              <span class="stat-ic" aria-hidden="true"><!-- Phosphor: house --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M104,216V152h48v64h64V120a8,8,0,0,0-2.34-5.66l-80-80a8,8,0,0,0-11.32,0l-80,80A8,8,0,0,0,40,120v96Z"/></svg></span>
-              <div class="stat-text"><span class="stat-fig">50%+</span><span class="stat-label">of an average Irish home's yearly electricity demand</span></div>
-            </div>
-          </div>
-          <!-- IMAGE: real EGR rooftop solar install / aerial to be supplied -->
-          <img class="savings-img" src="../images/ai/home-solar-install-rural.jpg" alt="EGR rooftop solar PV installation on a home in Wicklow" loading="lazy">
-        </div>
-        <p class="savings-note"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="87.66" y1="56.73" x2="83.5" y2="33.09"/><line x1="56.69" y1="76.46" x2="37.03" y2="62.69"/><line x1="48.73" y1="112.31" x2="25.09" y2="116.48"/><line x1="123.52" y1="64.69" x2="137.28" y2="45.03"/><path d="M96,144a68.06,68.06,0,1,1,68,72H84a44,44,0,1,1,14.2-85.66"/><path d="M59.65,135.35a48,48,0,1,1,80.19-50.94"/></svg> And yes — solar PV still generates on overcast Irish days. Just not at full output.</p>
-      </div>
-    </section>
-
-    <!-- SEAI GRANT -->
+    <!-- 1. SEAI GRANT -->
     <section class="grant" aria-labelledby="grant-title">
       <div class="container">
         <div class="section-head">
           <span class="sec-eyebrow">SEAI grant</span>
-          <h2 id="grant-title">Up to €1,800 SEAI grant — fully handled</h2>
-          <p class="section-intro">Residential Solar PV qualifies for the SEAI grant and 0% VAT on installation. EGR manage all the grant paperwork and your BER assessment for you, start to finish.</p>
+          <h2 id="grant-title">Up to &euro;1,800 off, before you pay a cent</h2>
+          <p class="section-intro">Every residential solar PV system qualifies for the SEAI grant, and EGR handle the full application and your BER assessment for you. We take the grant off your price up front &mdash; so you never have to pay it and claim it back later.</p>
         </div>
         <div class="grant-tiers">
-          <div class="grant-tier"><span class="amt">€1,500</span><span class="sys">2.5kW system</span></div>
-          <div class="grant-tier"><span class="amt">€1,600</span><span class="sys">3kW system</span></div>
-          <div class="grant-tier"><span class="amt">€1,800</span><span class="sys">4kW system</span></div>
+          <div class="grant-tier"><span class="amt">&euro;1,500</span><span class="sys">2.5kW system</span></div>
+          <div class="grant-tier"><span class="amt">&euro;1,600</span><span class="sys">3kW system</span></div>
+          <div class="grant-tier"><span class="amt">&euro;1,800</span><span class="sys">4kW system</span></div>
         </div>
-        <p class="grant-note">The grant scales with system size, up to €1,800 in total — plus 0% VAT on your installation. We deduct the grant up front and handle the SEAI application and BER assessment, so you don't have to.</p>
-        <div class="grant-cta">
-          <a class="btn-outline" href="../grant-finance.html">Grant &amp; finance details <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
-        </div>
+        <p class="grant-note">The grant scales with system size, up to a maximum of &euro;1,800. We deduct it from your quote up front and manage the SEAI paperwork and BER assessment from start to finish.</p>
       </div>
     </section>
 
-    <!-- HOW IT WORKS — solar-PV-specific process (matches homepage pattern) -->
-    <section class="how" aria-labelledby="how-title">
+    <!-- 2. 0% VAT -->
+    <section class="gf-vat" aria-labelledby="vat-title">
       <div class="container">
         <div class="section-head">
-          <span class="sec-eyebrow">How it works</span>
-          <h2 id="how-title">From first call to switched on</h2>
-          <p class="section-intro">Going solar with EGR is simple — we handle the technical bits and the grant paperwork for you.</p>
+          <span class="sec-eyebrow">0% VAT</span>
+          <h2 id="vat-title">0% VAT on your installation</h2>
+          <p class="section-intro">On top of the grant, the supply and installation of residential solar panels is charged at 0% VAT. It&rsquo;s applied automatically to your price &mdash; there&rsquo;s nothing extra for you to claim, and nothing to wait for.</p>
         </div>
-
-        <ol class="how-steps">
-
-          <li class="how-step">
-            <div class="how-num">1</div>
-            <div class="how-body">
-              <span class="how-ic" aria-hidden="true"><!-- Phosphor: chat-circle --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M79.93,211.11a96,96,0,1,0-35-35h0L32.42,213.46a8,8,0,0,0,10.12,10.12l37.39-12.47Z"/></svg></span>
-              <h3>Get your free quote</h3>
-              <p>Send your details and we call you back within the hour.</p>
-            </div>
-          </li>
-
-          <li class="how-step">
-            <div class="how-num">2</div>
-            <div class="how-body">
-              <span class="how-ic" aria-hidden="true"><!-- Phosphor: clipboard --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M160,40h40a8,8,0,0,1,8,8V216a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H96"/><path d="M88,72V64a40,40,0,0,1,80,0v8Z"/></svg></span>
-              <h3>Free home energy audit &amp; survey</h3>
-              <p>We assess your roof, energy use and the right system size for your home — your free 14-page energy audit.</p>
-            </div>
-          </li>
-
-          <li class="how-step">
-            <div class="how-num">3</div>
-            <div class="how-body">
-              <span class="how-ic" aria-hidden="true"><!-- Phosphor: seal-check --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M54.46,201.54c-9.2-9.2-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128S214.18,150,209.32,161.69c-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68C83,204.64,63.66,210.74,54.46,201.54Z"/><polyline points="88 136 112 160 168 104"/></svg></span>
-              <h3>System design &amp; grant paperwork</h3>
-              <p>We design your solar PV system and handle the &euro;1,800 SEAI grant and BER assessment for you.</p>
-            </div>
-          </li>
-
-          <li class="how-step">
-            <div class="how-num">4</div>
-            <div class="how-body">
-              <span class="how-ic" aria-hidden="true"><!-- Phosphor: solar-panel --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><line x1="40" y1="104" x2="56" y2="104"/><line x1="65.77" y1="41.77" x2="77.09" y2="53.09"/><line x1="128" y1="16" x2="128" y2="32"/><line x1="190.23" y1="41.77" x2="178.91" y2="53.09"/><line x1="216" y1="104" x2="200" y2="104"/><path d="M88,104a40,40,0,0,1,80,0"/><polygon points="24 216 64.7 144 191.3 144 232 216 24 216"/><line x1="46.61" y1="176" x2="209.39" y2="176"/><line x1="152.35" y1="144" x2="168" y2="216"/><line x1="88" y1="216" x2="103.65" y2="144"/></svg></span>
-              <h3>Professional roof install</h3>
-              <p>Our Safe Electric certified team installs your panels, usually in a day.</p>
-            </div>
-          </li>
-
-          <li class="how-step">
-            <div class="how-num">5</div>
-            <div class="how-body">
-              <span class="how-ic" aria-hidden="true"><!-- Phosphor: sun --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><line x1="128" y1="40" x2="128" y2="16"/><circle cx="128" cy="128" r="56"/><line x1="64" y1="64" x2="48" y2="48"/><line x1="64" y1="192" x2="48" y2="208"/><line x1="192" y1="64" x2="208" y2="48"/><line x1="192" y1="192" x2="208" y2="208"/><line x1="40" y1="128" x2="16" y2="128"/><line x1="128" y1="216" x2="128" y2="240"/><line x1="216" y1="128" x2="240" y2="128"/></svg></span>
-              <h3>Switch on &amp; start saving</h3>
-              <p>Start generating your own power and cutting your bill from day one.</p>
-            </div>
-          </li>
-
-        </ol>
-
-        <div class="how-cta">
-          <a class="btn-amber" href="#quote-form">Get your free quote <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+        <div class="feature-grid">
+          <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="88 136 112 160 168 104"/></svg></span><h3>Applied automatically</h3><p>The 0% rate is built into your quote from the start &mdash; no forms to fill in and no rebate to chase later.</p></div>
+          <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="96" cy="84" rx="80" ry="36"/><path d="M16,84v40c0,19.88,35.82,36,80,36s80-16.12,80-36V84"/><line x1="64" y1="117" x2="64" y2="157"/><path d="M176,96.72c36.52,3.34,64,17.86,64,35.28,0,19.88-35.82,36-80,36-19.6,0-37.56-3.17-51.47-8.44"/><path d="M80,159.28V172c0,19.88,35.82,36,80,36s80-16.12,80-36V132"/><line x1="192" y1="165" x2="192" y2="205"/><line x1="128" y1="117" x2="128" y2="205"/></svg></span><h3>Stacks with the grant</h3><p>The SEAI grant and 0% VAT both come off the same system, so the price we quote is already the price after both.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- FLAG: reviews below are SHARED/generic across every location page. Replace with
-         county-specific reviews + local install photos when EGR supply them — the single
-         biggest local-SEO upgrade for these pages. -->
-    <!-- 7. REVIEWS / SOCIAL PROOF (auto-advancing carousel) -->
-    <section class="reviews" aria-labelledby="reviews-title">
-      <!-- Glyph defs: Phosphor star (fill) + official multi-colour Google "G" (deliberate brand exception) -->
-      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-        <symbol id="ph-star" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol>
-        <symbol id="google-g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></symbol>
-      </svg>
-
+    <!-- 3. SPREAD THE COST (green-tinted band, matching How It Works) -->
+    <section class="gf-spread" aria-labelledby="spread-title">
       <div class="container">
-        <div class="reviews-head">
-          <span class="sec-eyebrow">What our customers say</span>
-          <div class="rating-bar">
-            <svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg>
-            <span class="rb-score">5.0</span>
-            <span class="stars-row" aria-hidden="true"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-            <span class="rb-divider"></span>
-            <span class="rb-count">Based on 93 Google reviews</span>
-          </div>
-          <h2 id="reviews-title">Trusted by homeowners across Munster and South Leinster</h2>
+        <div class="section-head">
+          <span class="sec-eyebrow">Spread the cost</span>
+          <h2 id="spread-title">Spread your payments, start saving now</h2>
+          <p class="section-intro">Don&rsquo;t want to pay it all up front? You can spread the cost of your system into smaller monthly payments &mdash; so your panels start paying their way from day one, while you spread the balance over time.</p>
         </div>
-
-        <div class="slider" id="reviewSlider" role="group" aria-roledescription="carousel" aria-label="Customer reviews">
-          <div class="slider-viewport">
-            <div class="slides">
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 1 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;I got solar panels and a battery from EGR. It&rsquo;s been two months now and I am just delighted I decided to do this. Every step of the way was just so easy.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Nicola Queally</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 2 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;100% recommend. We got a 20 panel ground mount system with 5kWh battery. Bernard was brilliant &mdash; went out of his way a number of times to make sure everything was right.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Brian Duggan</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 3 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;Couldn&rsquo;t believe how easy the process was. All involved are extremely knowledgeable and most obliging &mdash; and there&rsquo;s no such thing as a silly question! A pleasure to deal with.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Sharon Ryan</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 4 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;Couldn&rsquo;t recommend EGR enough. I got 5 proposals from local companies and others. EGR was best value for money for what I wanted.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Ciara Culloty</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 5 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;Seamless process! Jordan and his lads came on a Friday, weather very poor, but they got the 22 panels fitted, ready for the electricians on Monday.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Michael O&rsquo;Donovan</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 6 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;12 months since installation and it has been flawless. Working as expected and hands off entirely. Bernard and team are efficient!&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Ciaran Devitt</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 7 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;I would have no hesitation whatsoever recommending Eco Green Resources to anybody considering getting solar panels.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Pat Daly</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 8 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;More than a month in and everything is going great. I had one technical support request about managing the system and the response was fantastic.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Sean Byrne</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 9 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;Amazing work, very competitive prices. Went way over and above, nothing was too much hassle. Highly recommend!&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Aisling Kelliher</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-              <article class="slide" aria-roledescription="slide" aria-label="Review 10 of 10">
-                <span class="stars-row" aria-label="Rated 5 out of 5"><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg><svg class="star"><use href="#ph-star"/></svg></span>
-                <p class="review-text">&ldquo;Found EGR to be the best of all the quotes, and their team from office to installers and electricians could not have been more helpful.&rdquo;</p>
-                <div class="review-meta">
-                  <p class="review-name">Damian Quigley</p>
-                  <p class="review-src"><svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg> Verified Google review</p>
-                </div>
-              </article>
-
-            </div>
-          </div>
-
-          <div class="slider-controls">
-            <button class="slider-arrow prev" type="button" aria-label="Previous review"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"/></svg></button>
-            <div class="slider-dots" aria-label="Choose review"></div>
-            <button class="slider-arrow next" type="button" aria-label="Next review"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"/></svg></button>
-          </div>
-        </div>
-
-        <div class="reviews-more">
-          <!-- EGR Google reviews (search-results URL supplied by client; see note re: stable Maps/Business link) -->
-          <a class="btn-outline" href="https://www.google.com/search?sca_esv=417d7c30b6c96843&amp;sxsrf=ANbL-n5DsH-EQFVBhiqGfa3Ie9WhJCePrw:1780484746200&amp;q=eco+green+resources&amp;si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVOxL2M90lz1TdSqIChpUC9FTJ8WNKzzSvb1KqeXEo86XFPKpmiZkeNKm4Wezx50bG7wBHM%3D&amp;uds=ALYpb_nUOii3xq83QISjOGo-FImBu8pwD-9M5ksXLICWfr5xKprUr285WG0aK6ruBxDmRxmjOH46XKen1ESAlz6QzknM7cFxKKKB9tNxHullyBJEgX_I37s&amp;sa=X" target="_blank" rel="noopener">
-            <svg class="g-logo" aria-hidden="true"><use href="#google-g"/></svg>
-            Read all 93 reviews on Google
-          </a>
+        <div class="gf-example">
+          <span class="ex-label">Example only &mdash; not a quote</span>
+          <ul>
+            <li><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="88 136 112 160 168 104"/></svg><span>A system costing around &euro;10,000, spread over five years, works out at roughly &euro;200 a month.</span></li>
+            <li><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="88 136 112 160 168 104"/></svg><span>A system that size can generate in the region of &euro;2,176 of value a year in electricity you save and export.</span></li>
+            <li><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="88 136 112 160 168 104"/></svg><span>So across those five years you could be only a few hundred euro a year out of pocket &mdash; and once it&rsquo;s paid off, the savings are entirely yours.</span></li>
+          </ul>
+          <p class="ex-foot">Illustrative figures only, to show how spreading the cost can work &mdash; not a quote. Your own numbers depend on your home, system size and how you use energy. We&rsquo;ll give you exact figures with your free quote.</p>
         </div>
       </div>
     </section>
 
-    <!-- BOTTOM FORM — service-page bottom conversion ("ready for a quote?") -->
+    <!-- 4. WE HANDLE IT ALL -->
+    <section class="gf-handle" aria-labelledby="handle-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Made simple</span>
+          <h2 id="handle-title">The grant, the VAT and the paperwork &mdash; all handled</h2>
+          <p class="section-intro">Going solar with EGR is straightforward: you get one clear price, and we take care of everything behind it.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="96" cy="84" rx="80" ry="36"/><path d="M16,84v40c0,19.88,35.82,36,80,36s80-16.12,80-36V84"/><line x1="64" y1="117" x2="64" y2="157"/><path d="M176,96.72c36.52,3.34,64,17.86,64,35.28,0,19.88-35.82,36-80,36-19.6,0-37.56-3.17-51.47-8.44"/><path d="M80,159.28V172c0,19.88,35.82,36,80,36s80-16.12,80-36V132"/><line x1="192" y1="165" x2="192" y2="205"/><line x1="128" y1="117" x2="128" y2="205"/></svg></span><h3>Grant deducted up front</h3><p>We take the SEAI grant off your price before you pay, so there&rsquo;s nothing to claim back.</p></div>
+          <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M216,112V56a8,8,0,0,0-8-8H48a8,8,0,0,0-8,8v56c0,96,88,120,88,120S216,208,216,112Z"/><polyline points="88 136 112 160 168 104"/></svg></span><h3>0% VAT applied for you</h3><p>The 0% rate on installation is built straight into your quote &mdash; automatically.</p></div>
+          <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="40" y="40" width="176" height="176" rx="8"/><line x1="176" y1="24" x2="176" y2="56"/><line x1="80" y1="24" x2="80" y2="56"/><line x1="40" y1="88" x2="216" y2="88"/><polyline points="92 152 116 176 164 128"/></svg></span><h3>Spread your payments</h3><p>Pay up front, or spread the cost into manageable monthly payments &mdash; whatever suits you.</p></div>
+          <div class="trust-item"><span class="trust-ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M160,40h40a8,8,0,0,1,8,8V216a8,8,0,0,1-8,8H56a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H96"/><path d="M88,72V64a40,40,0,0,1,80,0v8Z"/></svg></span><h3>All the paperwork handled</h3><p>We manage the SEAI application and your BER assessment from start to finish.</p></div>
+        </div>
+      </div>
+    </section>
 
     <!-- 9. FINAL CTA BANNER -->
     <section class="final-cta" aria-labelledby="final-cta-title">
       <div class="container final-cta-inner">
         <div class="final-logo" aria-hidden="true">
-          <img src="../images/brand/egr-png-trans-logo-white.png" alt="" width="500" height="500" loading="lazy">
+          <img src="images/brand/egr-png-trans-logo-white.png" alt="" width="500" height="500" loading="lazy">
         </div>
         <span class="fc-eyebrow">Ready to start?</span>
-        <h2 id="final-cta-title">Ready to cut your electricity bill? Get your free quote today.</h2>
-        <p class="fc-sub">&euro;1,800 SEAI grant + 0% VAT, fully handled. We&rsquo;ll call you back within the hour.</p>
+        <h2 id="final-cta-title">Want to see your numbers? Get your free, no-obligation quote.</h2>
+        <p class="fc-sub">&euro;1,800 SEAI grant + 0% VAT handled for you &mdash; and you can spread the cost. We&rsquo;ll call you back within the hour.</p>
 
         <div class="fc-actions">
-          <a class="btn-amber" href="#quote-form">Get your free quote <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+          <a class="btn-amber" href="get-a-quote/index.html">Get your free quote <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
           <!-- Phone confirmed (EGR Google Business Profile): +353 818 911 910 -->
           <a class="btn-ghost-white" href="tel:+353818911910">
             <!-- Phosphor: phone -->
@@ -2386,7 +2155,7 @@
         <!-- Column 1 — Brand -->
         <div class="footer-col footer-brand">
           <div class="footer-logo" aria-hidden="true">
-            <img src="../images/brand/egr-png-trans-logo-white.png" alt="EGR Solar — Eco Green Resources" width="500" height="500" loading="lazy">
+            <img src="images/brand/egr-png-trans-logo-white.png" alt="EGR Solar — Eco Green Resources" width="500" height="500" loading="lazy">
           </div>
           <p class="footer-tagline">Eco Green Resources &mdash; your local solar specialist for Munster and South Leinster.</p>
           <p class="footer-trust">
@@ -2409,15 +2178,15 @@
         <nav class="footer-col" aria-label="Footer">
           <h3>Explore</h3>
           <ul class="footer-links">
-            <li><a href="../residential.html">Residential</a></li>
-            <li><a href="../commercial.html">Commercial</a></li>
-            <li><a href="../agricultural.html">Agricultural</a></li>
-            <li><a href="index.html">Locations</a></li>
-            <li><a href="../grant-finance.html">Grant &amp; Finance</a></li>
-            <li><a href="../why-egr.html">Why EGR</a></li>
-            <li><a href="../reviews.html">Reviews</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="residential.html">Residential</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
+            <li><a href="agricultural.html">Agricultural</a></li>
+            <li><a href="locations/index.html">Locations</a></li>
+            <li><a href="grant-finance.html">Grant &amp; Finance</a></li>
+            <li><a href="why-egr.html">Why EGR</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
 
@@ -2425,10 +2194,10 @@
         <nav class="footer-col" aria-label="Services">
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="../solar-pv.html">Solar PV</a></li>
-            <li><a href="../battery-storage.html">Battery Storage</a></li>
-            <li><a href="../ev-charging.html">EV Charging</a></li>
-            <li><a href="../home-heating.html">Home Heating</a></li>
+            <li><a href="solar-pv.html">Solar PV</a></li>
+            <li><a href="battery-storage.html">Battery Storage</a></li>
+            <li><a href="ev-charging.html">EV Charging</a></li>
+            <li><a href="home-heating.html">Home Heating</a></li>
           </ul>
         </nav>
 
@@ -2474,16 +2243,16 @@
 
       <!-- Certification logos on white chips (read on the dark footer). NOTE (Teagasc): confirm entitlement at review. -->
       <div class="footer-certs">
-        <span class="footer-cert"><img src="../images/certs/seai.png" alt="SEAI registered" width="400" height="112" loading="lazy"></span>
-        <span class="footer-cert is-badge"><img src="../images/certs/safe-electric.svg" alt="Safe Electric registered electrical contractor" width="568" height="420" loading="lazy"></span>
-        <span class="footer-cert"><img src="../images/certs/teagasc.png" alt="Teagasc — Agriculture and Food Development Authority" width="401" height="140" loading="lazy"></span>
+        <span class="footer-cert"><img src="images/certs/seai.png" alt="SEAI registered" width="400" height="112" loading="lazy"></span>
+        <span class="footer-cert is-badge"><img src="images/certs/safe-electric.svg" alt="Safe Electric registered electrical contractor" width="568" height="420" loading="lazy"></span>
+        <span class="footer-cert"><img src="images/certs/teagasc.png" alt="Teagasc — Agriculture and Food Development Authority" width="401" height="140" loading="lazy"></span>
       </div>
 
       <div class="footer-bottom">
         <p>&copy; 2026 Eco Green Resources Ltd. All rights reserved.</p>
         <nav class="footer-legal" aria-label="Legal">
-          <a href="../privacy-policy.html">Privacy Policy</a>
-          <a href="../cookie-policy.html">Cookie Policy</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
         </nav>
       </div>
     </div>
@@ -2721,7 +2490,7 @@
   </script>
   <!-- ===== Cookie consent bar (GDPR) ===== -->
   <div class="cookie-bar" id="cookieBar" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
-    <p class="cookie-bar-text">We use essential cookies to make this site work. With your consent we also use analytics and marketing cookies to improve the site and measure our advertising. See our <a href="../cookie-policy.html">Cookie Policy</a>.</p>
+    <p class="cookie-bar-text">We use essential cookies to make this site work. With your consent we also use analytics and marketing cookies to improve the site and measure our advertising. See our <a href="cookie-policy.html">Cookie Policy</a>.</p>
     <div class="cookie-bar-actions">
       <button type="button" class="cookie-reject" id="cookieReject">Necessary only</button>
       <button type="button" class="cookie-accept" id="cookieAccept">Accept all</button>
@@ -2753,7 +2522,5 @@
       if (r) r.addEventListener('click', reject);
     })();
   </script>
-  <!-- GoHighLevel form auto-resize (loaded once) -->
-  <script src="https://link.flowdagency.ai/js/form_embed.js"></script>
 </body>
 </html>
