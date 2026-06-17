@@ -11,10 +11,26 @@ _Call with Bernard O'Connor (owner) & Zoe Kinahan (senior manager). Requirements
   Kildare + Laois = strong existing-customer areas. Confirm current county set
   against this (Dublin was "early days" — verify it stays).
 
+## Suppliers / brands (CORRECTED — confirmed list)
+- Confirmed current suppliers, ONLY these 5:
+  1. Maxeon  (correct spelling — NOT "Maxion")
+  2. Jinko Solar
+  3. Sigenergy
+  4. Tongwei / TW Solar
+  5. SAJ
+- REMOVED from the site: Solis, Dyness, myenergi, Sofar, EO.
+- DONE: brand/manufacturer prose updated to the 5 across solar-pv, residential,
+  battery-storage, ev-charging (panels = Maxeon/TW/Jinko; battery & inverter =
+  SAJ/Sigenergy).
+- DONE: "Brands we install" logo strip added to why-egr and solar-pv only
+  (NOT the footer) — 5 placeholder slots awaiting real logo files for the 5
+  brands (drop into images/brands/).
+- OPEN QUESTION for EGR: which EV charger brand do they actually fit? The 5
+  confirmed suppliers are panel/inverter/battery brands; the EV page currently
+  uses SAJ/Sigenergy as a placeholder + "other brands on request" — needs
+  confirming (likely myenergi or EO if they still fit those).
+
 ## Build changes requested
-- ADD MAXION to the manufacturer/brands list — Bernard's explicit call-out,
-  "number one make in the world", now sold by EGR. (Current: TW Solar, Jinko,
-  Solis, SAJ, Dyness, myenergi.)
 - BUMP THE LOGO larger / more prominent in the header — Bernard brand-building,
   wants EGR.ie instantly recognisable.
 - PUSH GROUND-MOUNT SYSTEMS more prominently — demand shifting to ground-mount;
@@ -33,7 +49,8 @@ _Call with Bernard O'Connor (owner) & Zoe Kinahan (senior manager). Requirements
 - Real install photos incl. ground-mount (from their WordPress media library)
 - Team headshots: Bernard, Zoe, Paul, Patrick, Kerrie, Adam, Claire → fill the
   5 empty why-egr team slots with REAL photos (no AI faces)
-- Manufacturer logos incl. Maxion; Finance Ireland; SEAI / Safe Electric badges
+- Manufacturer logos for the 5 confirmed suppliers (Maxeon, Jinko Solar,
+  Sigenergy, Tongwei / TW Solar, SAJ); Finance Ireland; SEAI / Safe Electric badges
 
 ## Still outstanding from EGR (launch blockers)
 - Real tracking IDs (GTM/GA4/Google Ads/Meta Pixel) + confirm nothing already
