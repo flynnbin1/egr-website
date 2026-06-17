@@ -1771,6 +1771,13 @@
     }
 
     /* what you'll save: stat cards */
+    /* Brands we install — logo strip (uniform slots; real logos in images/brands/) */
+    .brands { background: var(--color-surface); padding-block: var(--section-pad); }
+    .brand-strip { list-style: none; padding: 0; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(0.75rem, 1.5vw, 1.25rem); max-width: 64rem; }
+    .brand-logo { display: flex; align-items: center; justify-content: center; height: 96px; padding: 1rem 1.25rem; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); }
+    .brand-logo img { max-height: 48px; max-width: 100%; width: auto; display: block; }
+    @media (max-width: 860px) { .brand-strip { grid-template-columns: repeat(3, 1fr); max-width: 40rem; } }
+    @media (max-width: 520px) { .brand-strip { grid-template-columns: repeat(2, 1fr); max-width: 22rem; } }
     .savings { background: var(--color-white); padding-block: var(--section-pad); }
     .stat-grid {
       display: grid;
@@ -2073,6 +2080,24 @@
     </section>
 
     <!-- WHAT YOU'LL SAVE — real savings figures -->
+    <!-- BRANDS WE INSTALL -->
+    <section class="brands" aria-labelledby="brands-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Brands we install</span>
+          <h2 id="brands-title">Tier-one equipment from trusted manufacturers</h2>
+          <p class="section-intro">Panels, inverters and storage from the global manufacturers we trust to perform and last &mdash; the same kit on every install.</p>
+        </div>
+        <ul class="brand-strip" role="list">
+          <li class="brand-logo"><img src="images/brands/maxeon.png" alt="Maxeon logo" width="400" height="200" loading="lazy"></li>
+          <li class="brand-logo"><img src="images/brands/jinko.png" alt="Jinko Solar logo" width="400" height="200" loading="lazy"></li>
+          <li class="brand-logo"><img src="images/brands/sigenergy.png" alt="Sigenergy logo" width="400" height="200" loading="lazy"></li>
+          <li class="brand-logo"><img src="images/brands/tongwei.png" alt="Tongwei / TW Solar logo" width="400" height="200" loading="lazy"></li>
+          <li class="brand-logo"><img src="images/brands/saj.png" alt="SAJ logo" width="400" height="200" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="savings" aria-labelledby="savings-title">
       <div class="container">
         <div class="section-head">
