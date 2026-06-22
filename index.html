@@ -274,6 +274,8 @@
     }
     /* Get a Quote is its own right-hand grid zone (moved out of nav-links) */
     .nav-inner > .btn-cta { justify-self: end; }
+    /* a second Get a Quote lives inside the drawer for mobile — hidden on desktop */
+    .nav-links .btn-cta { display: none; }
 
     /* mobile nav toggle */
     .nav-toggle {
@@ -1638,11 +1640,11 @@
       /* The nav entrance animation leaves an identity transform on .nav-inner, which would
          become the containing block for the fixed drawer — trapping it to the nav-bar height.
          Disable that animation at mobile so the drawer's position:fixed resolves against the viewport. */
-      /* mobile: revert the desktop 3-zone grid to a simple bar — logo left,
-         Get a Quote + hamburger grouped right (button no longer lives in the drawer) */
-      .nav-inner { animation: none; display: flex; gap: 0.6rem; padding-inline: clamp(1rem, 4vw, 4rem); }
+      /* mobile: revert the desktop 3-zone grid to a simple bar — logo hard-left, hamburger hard-right */
+      .nav-inner { animation: none; display: flex; }
       .nav-logo { margin-right: auto; }
-      .nav-inner > .btn-cta { font-size: 0.85rem; padding: calc(0.5rem - 2px) calc(1rem - 2px); }
+      /* hide the desktop grid CTA on mobile — the quote CTA lives in the drawer instead */
+      .nav-inner > .btn-cta { display: none; }
 
       /* mobile primary nav becomes a right slide-in drawer (off-canvas) */
       .nav-links {
@@ -1715,8 +1717,8 @@
       .nav.scrolled .nav-links .nav-dd-trigger { color: var(--color-white); }
       .nav.scrolled .nav-links .nav-dd-link { color: rgba(var(--rgb-white), 0.85); }
 
-      /* amber CTA pinned to the bottom; the link list scrolls behind it */
-      .nav-links .btn-cta { order: 99; margin-top: auto; position: sticky; bottom: 0; justify-content: center; }
+      /* amber Get a Quote — last item in the drawer, below Contact */
+      .nav-links .btn-cta { display: inline-flex; order: 99; margin-top: 1.25rem; justify-content: center; }
 
       .nav-toggle { display: flex; }
       .hero { min-height: 85vh; min-height: calc(100svh - var(--announce-h)); }
@@ -1791,6 +1793,7 @@
         <a class="link" href="why-egr.html">Why EGR</a>
         <a class="link" href="reviews.html">Reviews</a>
         <a class="link" href="contact.html">Contact</a>
+        <a class="btn-cta" href="get-a-quote/index.html">Get a Quote</a>
       </nav>
 
       <a class="btn-cta" href="get-a-quote/index.html">Get a Quote</a>
