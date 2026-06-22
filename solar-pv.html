@@ -1670,7 +1670,7 @@
     /* ============================================================
        SERVICE PAGE — reusable sections (template for all 4 service pages)
        ============================================================ */
-    .svc-intro h2, .panels h2, .savings h2, .grant h2, .bottom-form-copy h2 {
+    .svc-intro h2, .panels h2, .savings h2, .ground h2, .grant h2, .bottom-form-copy h2 {
       font-family: var(--font-heading);
       font-weight: 600;
       font-size: clamp(1.85rem, 3.2vw, 2.6rem);
@@ -1875,6 +1875,37 @@
       .savings-split { grid-template-columns: 1fr; }
     }
 
+    /* ground-mount: image + copy split (zig-zag: image left), soft lime band */
+    .ground {
+      background: rgba(var(--rgb-accent), 0.07);
+      border-block: 1px solid rgba(var(--rgb-forest), 0.10);
+      padding-block: var(--section-pad);
+    }
+    .ground-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .ground-img { aspect-ratio: 4 / 3; }
+    .ground-copy { max-width: 36rem; }
+    .ground-copy p { font-size: clamp(1rem, 1.3vw, 1.12rem); line-height: 1.6; color: var(--color-text-muted); }
+    .ground-points {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 1.75rem;
+      display: grid;
+      gap: 0.85rem;
+    }
+    .ground-points li { display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.5; color: var(--color-text); }
+    .ground-points svg { flex: none; width: 22px; height: 22px; color: var(--color-primary); margin-top: 1px; }
+    .ground-spread { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid rgba(var(--rgb-forest), 0.12); }
+    .ground-spread p { margin-bottom: 1rem; }
+    @media (max-width: 880px) {
+      .ground-split { grid-template-columns: 1fr; }
+      .ground-copy { max-width: none; }
+    }
+
     /* SEAI grant */
     .grant { background: var(--color-surface); padding-block: var(--section-pad); }
     .grant-tiers {
@@ -1934,7 +1965,7 @@
     .cookie-reject { background: transparent; color: var(--color-white); border-color: rgba(var(--rgb-white), 0.45); }
     .cookie-reject:hover { border-color: var(--color-white); background: rgba(var(--rgb-white), 0.08); }
     @media (max-width: 560px) { .cookie-bar-actions { width: 100%; } .cookie-bar-actions button { flex: 1; } }
-    img.svc-intro-img, img.savings-img, img.panels-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
+    img.svc-intro-img, img.savings-img, img.panels-img, img.ground-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
     /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
     #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
   </style>
@@ -2150,6 +2181,45 @@
           <img class="savings-img" src="images/ai/home-solar-install-rural.jpg" alt="EGR solar PV installation on a rural Irish home" loading="lazy">
         </div>
         <p class="savings-note"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="87.66" y1="56.73" x2="83.5" y2="33.09"/><line x1="56.69" y1="76.46" x2="37.03" y2="62.69"/><line x1="48.73" y1="112.31" x2="25.09" y2="116.48"/><line x1="123.52" y1="64.69" x2="137.28" y2="45.03"/><path d="M96,144a68.06,68.06,0,1,1,68,72H84a44,44,0,1,1,14.2-85.66"/><path d="M59.65,135.35a48,48,0,1,1,80.19-50.94"/></svg> And yes — solar PV still generates on overcast Irish days. Just not at full output.</p>
+      </div>
+    </section>
+
+    <!-- GROUND-MOUNTED SOLAR -->
+    <section class="ground" aria-labelledby="ground-title">
+      <div class="container ground-split">
+        <!-- PLACEHOLDER — replace with real ground-mount install photo from client. Intended file: images/ground-mount-1.jpg, class="ground-img", alt="Ground-mounted solar array on a frame in a rural Irish field" -->
+        <div class="ground-img img-ph" role="img" aria-label="Ground-mounted solar install photo — coming from client">
+          <svg class="img-ph-icon" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8"/><circle cx="156" cy="100" r="20"/><path d="M32.7,201.78l50-50a8,8,0,0,1,11.31,0l36.69,36.68a8,8,0,0,0,11.31,0l20.69-20.68a8,8,0,0,1,11.31,0L223.3,206"/></svg>
+          <span class="img-ph-label">Ground-mount install photo &mdash; coming from client</span>
+        </div>
+        <div class="ground-copy">
+          <span class="sec-eyebrow">Ground-mounted solar</span>
+          <h2 id="ground-title">No roof space? Ground-mounted solar.</h2>
+          <p>Not every home is right for roof panels &mdash; and that&rsquo;s no problem. A ground-mounted system sits on a sturdy frame in your garden, field or yard instead of the roof, so you can still generate your own power when the roof isn&rsquo;t the answer.</p>
+          <ul class="ground-points">
+            <li>
+              <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="172 104 113 160 84 132"/></svg>
+              <span>Ideal when your roof is the wrong orientation, shaded, older, or listed and awkward to work with.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="172 104 113 160 84 132"/></svg>
+              <span>A great fit if you&rsquo;ve land or a yard to spare and want a larger system.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="172 104 113 160 84 132"/></svg>
+              <span>Angled and positioned for the best possible sun &mdash; not limited by your roofline.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"/><polyline points="172 104 113 160 84 132"/></svg>
+              <span>The same tier-one panels and certified install as a rooftop system, designed around your site.</span>
+            </li>
+          </ul>
+          <a class="btn-amber" href="#quote-form">Get your free quote <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+          <div class="ground-spread">
+            <p>A bigger system like this doesn&rsquo;t have to mean a big bill up front &mdash; you can spread the cost over a term that suits you.</p>
+            <a class="btn-outline" href="spread-the-cost.html">See how you can spread the cost <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+          </div>
+        </div>
       </div>
     </section>
 
