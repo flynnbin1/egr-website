@@ -79,7 +79,7 @@
       /* layout */
       --container: 1240px;
       --gutter: clamp(1.25rem, 4vw, 3rem);
-      --nav-h: 84px;
+      --nav-h: 110px;
       --logo-h: 48px;       /* visible logo height after cropping the PNG's transparent padding */
       --announce-h: 42px;
       --section-pad: clamp(4.5rem, 8vw, 7rem);   /* vertical rhythm between sections */
@@ -176,9 +176,9 @@
     }
     .nav-inner {
       min-height: var(--nav-h);
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;   /* logo | centred nav-links | button — equal side zones */
       align-items: center;
-      justify-content: space-between;
       gap: 1.5rem;
       max-width: 1600px;
       padding-inline: clamp(1.5rem, 4vw, 4rem);
@@ -191,6 +191,7 @@
       align-items: center;
       height: var(--logo-h);
       overflow: hidden;
+      justify-self: start;
     }
     .nav-logo img { height: calc(var(--logo-h) / 0.252); width: auto; max-width: none; display: block; }
     /* dual-state: white logo over the dark hero, full-colour once scrolled onto white */
@@ -202,6 +203,7 @@
       display: flex;
       align-items: center;
       gap: clamp(0.5rem, 1vw, 1.2rem);
+      justify-self: center;
     }
     .nav-links a.link {
       font-size: 0.95rem;
@@ -269,6 +271,10 @@
       color: var(--color-text);
       transform: translateY(-2px) scale(1.03);
     }
+    /* Get a Quote is its own right-hand grid zone (moved out of nav-links) */
+    .nav-inner > .btn-cta { justify-self: end; }
+    /* a second Get a Quote lives inside the drawer for mobile — hidden on desktop */
+    .nav-links .btn-cta { display: none; }
 
     /* mobile nav toggle */
     .nav-toggle {
@@ -1557,12 +1563,15 @@
     }
 
     @media (max-width: 1024px) {
-      :root { --nav-h: 72px; --logo-h: 38px; }
+      :root { --nav-h: 78px; --logo-h: 38px; }
 
       /* The nav entrance animation leaves an identity transform on .nav-inner, which would
          become the containing block for the fixed drawer — trapping it to the nav-bar height.
          Disable that animation at mobile so the drawer's position:fixed resolves against the viewport. */
-      .nav-inner { animation: none; }
+      .nav-inner { animation: none; display: flex; }
+      .nav-logo { margin-right: auto; }
+      /* hide the desktop grid CTA on mobile — the quote CTA lives in the drawer instead */
+      .nav-inner > .btn-cta { display: none; }
 
       /* mobile primary nav becomes a right slide-in drawer (off-canvas) */
       .nav-links {
@@ -1635,8 +1644,8 @@
       .nav.scrolled .nav-links .nav-dd-trigger { color: var(--color-white); }
       .nav.scrolled .nav-links .nav-dd-link { color: rgba(var(--rgb-white), 0.85); }
 
-      /* amber CTA pinned to the bottom; the link list scrolls behind it */
-      .nav-links .btn-cta { order: 99; margin-top: auto; position: sticky; bottom: 0; justify-content: center; }
+      /* amber Get a Quote — last item in the drawer, below Contact */
+      .nav-links .btn-cta { display: inline-flex; order: 99; margin-top: 1.25rem; justify-content: center; }
 
       .nav-toggle { display: flex; }
       .hero { min-height: 85vh; min-height: calc(100svh - var(--announce-h)); }
@@ -2063,6 +2072,8 @@
         <a class="link" href="../contact.html">Contact</a>
         <a class="btn-cta" href="../get-a-quote/index.html">Get a Quote</a>
       </nav>
+
+      <a class="btn-cta" href="../get-a-quote/index.html">Get a Quote</a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
