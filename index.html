@@ -181,6 +181,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
+      max-width: 1600px;
+      padding-inline: clamp(1.5rem, 4vw, 4rem);
     }
     /* The logo PNGs are 500x500 squares whose artwork fills only ~25% of the height.
        Set the box to the desired VISIBLE height and crop the transparent padding:
@@ -239,6 +241,8 @@
     .nav.scrolled .btn-cta:hover {
       background: var(--color-cta-hover);
       border-color: var(--color-cta-hover);
+      color: var(--color-text);
+      transform: translateY(-2px) scale(1.03);
     }
 
     /* Secondary nav CTA — ghost/outline over the hero so it doesn't compete with the form card.
@@ -250,17 +254,19 @@
       font-family: var(--font-body);
       font-weight: 600;
       font-size: 0.95rem;
-      color: var(--color-cta);
-      background: transparent;
+      color: var(--color-text);
+      background: var(--color-cta);
       padding: calc(0.7rem - 2px) calc(1.4rem - 2px);
       border-radius: var(--radius-pill);
       border: 2px solid var(--color-cta);
       cursor: pointer;
+      box-shadow: var(--shadow-btn);
       transition: background-color 0.3s var(--ease), color 0.3s var(--ease),
                   transform 0.3s var(--ease);
     }
     .btn-cta:hover {
-      background: var(--color-cta);
+      background: var(--color-cta-hover);
+      border-color: var(--color-cta-hover);
       color: var(--color-text);
       transform: translateY(-2px) scale(1.03);
     }
