@@ -199,7 +199,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(1rem, 2vw, 2rem);
+      gap: clamp(0.5rem, 1vw, 1.2rem);
     }
     .nav-links a.link {
       font-size: 0.95rem;
@@ -386,7 +386,7 @@
     .nav-dd-link:focus-visible { background: rgba(var(--rgb-forest), 0.08); color: var(--color-primary); }
 
     /* Sectors dropdown — mobile: accordion inside the hamburger menu */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-dd { display: block; width: 100%; }
       .nav-dd-trigger {
         width: 100%;
@@ -1550,7 +1550,7 @@
       .hero-form { max-width: 100%; margin-left: 0; }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       :root { --nav-h: 72px; --logo-h: 38px; }
 
       /* The nav entrance animation leaves an identity transform on .nav-inner, which would
@@ -1956,6 +1956,8 @@
           </div>
         </div>
         <a class="link" href="locations/index.html">Locations</a>
+        <a class="link" href="grants.html">Grants</a>
+        <a class="link" href="spread-the-cost.html">Spread the Cost</a>
         <a class="link" href="why-egr.html">Why EGR</a>
         <a class="link" href="reviews.html">Reviews</a>
         <a class="link" href="contact.html">Contact</a>
@@ -2204,7 +2206,8 @@
             <li><a href="commercial.html">Commercial</a></li>
             <li><a href="agricultural.html">Agricultural</a></li>
             <li><a href="locations/index.html">Locations</a></li>
-            <li><a href="grant-finance.html">Grant &amp; Finance</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="spread-the-cost.html">Spread the Cost</a></li>
             <li><a href="why-egr.html">Why EGR</a></li>
             <li><a href="reviews.html">Reviews</a></li>
             <li><a href="about.html">About</a></li>

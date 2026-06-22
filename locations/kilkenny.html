@@ -199,7 +199,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(1rem, 2vw, 2rem);
+      gap: clamp(0.5rem, 1vw, 1.2rem);
     }
     .nav-links a.link {
       font-size: 0.95rem;
@@ -386,7 +386,7 @@
     .nav-dd-link:focus-visible { background: rgba(var(--rgb-forest), 0.08); color: var(--color-primary); }
 
     /* Sectors dropdown — mobile: accordion inside the hamburger menu */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-dd { display: block; width: 100%; }
       .nav-dd-trigger {
         width: 100%;
@@ -1554,7 +1554,7 @@
       .hero-form { max-width: 100%; margin-left: 0; }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       :root { --nav-h: 72px; --logo-h: 38px; }
 
       /* The nav entrance animation leaves an identity transform on .nav-inner, which would
@@ -1998,6 +1998,8 @@
           </div>
         </div>
         <a class="link" href="index.html">Locations</a>
+        <a class="link" href="../grants.html">Grants</a>
+        <a class="link" href="../spread-the-cost.html">Spread the Cost</a>
         <a class="link" href="../why-egr.html">Why EGR</a>
         <a class="link" href="../reviews.html">Reviews</a>
         <a class="link" href="../contact.html">Contact</a>
@@ -2071,7 +2073,7 @@
           <h2 id="locality-title">Local solar installers for Kilkenny</h2>
           <p class="section-intro">Across Kilkenny — from the Marble City itself out to Thomastown, Callan and Castlecomer — EGR fits solar on city townhouses and country homes throughout the county.</p>
         </div>
-        <p class="locality-links">EGR fit the same tier-one panels and handle the €1,800 SEAI grant and 0% VAT wherever you are in Kilkenny. Explore <a href="../residential.html">residential solar</a>, the <a href="../grant-finance.html">grant &amp; finance</a> details, or browse <a href="index.html">all the counties we cover</a>.</p>
+        <p class="locality-links">EGR fit the same tier-one panels and handle the €1,800 SEAI grant and 0% VAT wherever you are in Kilkenny. Explore <a href="../residential.html">residential solar</a>, the <a href="../grants.html">grant</a> details, or browse <a href="index.html">all the counties we cover</a>.</p>
       </div>
     </section>
 
@@ -2138,7 +2140,7 @@
         </div>
         <p class="grant-note">The grant scales with system size, up to €1,800 in total — plus 0% VAT on your installation. We deduct the grant up front and handle the SEAI application and BER assessment, so you don't have to.</p>
         <div class="grant-cta">
-          <a class="btn-outline" href="../grant-finance.html">Grant &amp; finance details <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+          <a class="btn-outline" href="../grants.html">Grant details <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -2412,7 +2414,8 @@
             <li><a href="../commercial.html">Commercial</a></li>
             <li><a href="../agricultural.html">Agricultural</a></li>
             <li><a href="index.html">Locations</a></li>
-            <li><a href="../grant-finance.html">Grant &amp; Finance</a></li>
+            <li><a href="../grants.html">Grants</a></li>
+            <li><a href="../spread-the-cost.html">Spread the Cost</a></li>
             <li><a href="../why-egr.html">Why EGR</a></li>
             <li><a href="../reviews.html">Reviews</a></li>
             <li><a href="../about.html">About</a></li>

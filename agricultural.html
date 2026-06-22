@@ -199,7 +199,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: clamp(1rem, 2vw, 2rem);
+      gap: clamp(0.5rem, 1vw, 1.2rem);
     }
     .nav-links a.link {
       font-size: 0.95rem;
@@ -386,7 +386,7 @@
     .nav-dd-link:focus-visible { background: rgba(var(--rgb-forest), 0.08); color: var(--color-primary); }
 
     /* Sectors dropdown — mobile: accordion inside the hamburger menu */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .nav-dd { display: block; width: 100%; }
       .nav-dd-trigger {
         width: 100%;
@@ -1554,7 +1554,7 @@
       .hero-form { max-width: 100%; margin-left: 0; }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       :root { --nav-h: 72px; --logo-h: 38px; }
 
       /* The nav entrance animation leaves an identity transform on .nav-inner, which would
@@ -1997,6 +1997,8 @@
           </div>
         </div>
         <a class="link" href="locations/index.html">Locations</a>
+        <a class="link" href="grants.html">Grants</a>
+        <a class="link" href="spread-the-cost.html">Spread the Cost</a>
         <a class="link" href="why-egr.html">Why EGR</a>
         <a class="link" href="reviews.html">Reviews</a>
         <a class="link" href="contact.html">Contact</a>
@@ -2179,7 +2181,7 @@
         </div>
         <p class="grant-note">Open to registered farmers with a herd number, the scheme covers up to 60% of eligible solar PV — subject to approval. Applications run in tranches with set windows, so talk to us about the current one. EGR handle the full TAMS 3 application and paperwork for you.</p>
         <div class="grant-cta">
-          <a class="btn-outline" href="grant-finance.html">Grant &amp; finance details <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+          <a class="btn-outline" href="grants.html">Grant details <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
         </div>
       </div>
     </section>
@@ -2489,7 +2491,8 @@
             <li><a href="commercial.html">Commercial</a></li>
             <li><a href="agricultural.html">Agricultural</a></li>
             <li><a href="locations/index.html">Locations</a></li>
-            <li><a href="grant-finance.html">Grant &amp; Finance</a></li>
+            <li><a href="grants.html">Grants</a></li>
+            <li><a href="spread-the-cost.html">Spread the Cost</a></li>
             <li><a href="why-egr.html">Why EGR</a></li>
             <li><a href="reviews.html">Reviews</a></li>
             <li><a href="about.html">About</a></li>
