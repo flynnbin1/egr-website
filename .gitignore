@@ -38,5 +38,20 @@ playwright-report/
 # The site serves the optimised .jpg files in images/ai/. Raw PNG sources where an
 # optimised .jpg twin already exists must not be committed (e.g. the removed hero-day.png).
 # Do NOT add a blanket *.png ignore — the site uses real .png assets (logos, certs).
-# FLAGGED + excluded from this push: unused 10MB raw brand photo. Optimise to .jpg before using.
+# FLAGGED + excluded from this push: unused 10MB raw brand photo (portrait, too big for OG). Optimise to .jpg before using.
 images/real/clip11-egr-brand.png
+
+# Raw Higgsfield generation dumps (images/ai/hf_*.png) — ~30MB each, ~1.4GB total.
+# Scratch only; the site serves the named, optimised images/ai/*.jpg files. Never commit these.
+images/ai/hf_*.png
+
+# Raw camera/phone dumps in images/real/ (unreferenced, unoptimised originals).
+# These patterns target the raw-dump naming ONLY — properly NAMED real images
+# (e.g. images/real/og-solar.jpg, images/real/ground-mount-install.jpg) are NOT
+# ignored and can be committed normally.
+images/real/DJI_*
+images/real/dji_fly_*
+images/real/WhatsApp Image*
+images/real/Agri.jpg
+images/real/2.jpg
+images/real/3.jpg
