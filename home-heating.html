@@ -38,6 +38,20 @@
   <title>Heat Pumps &amp; Home Heating in Tipperary &amp; Cork | EGR Solar</title>
   <meta name="description" content="Air-to-water &amp; air-to-air heat pumps, heating controls and LED lighting installed across Tipperary, Cork and Munster. Move off gas and oil, SEAI grants handled by EGR. Free quote, 1-hour callback.">
 
+  <!-- FAQ structured data — matches the visible Home Heating FAQ word-for-word. Only confirmed answers included (heat-pump grant Q&A omitted, flagged VERIFY on-page). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is a heat pump?", "acceptedAnswer": { "@type": "Answer", "text": "A heat pump is an efficient electric heating system that takes warmth from the air around your home to heat your rooms and hot water, much more efficiently than oil or gas." } },
+      { "@type": "Question", "name": "Is a heat pump right for my home?", "acceptedAnswer": { "@type": "Answer", "text": "Heat pumps work best in a reasonably well-insulated home, so we assess yours first and tell you honestly whether it’s a good fit before recommending anything." } },
+      { "@type": "Question", "name": "Can a heat pump run on my solar panels?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — running a heat pump on solar electricity is a great pairing, using your own power for heating instead of buying it all from the grid." } },
+      { "@type": "Question", "name": "Will a heat pump keep my home warm in winter?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — modern heat pumps are designed for the Irish climate and heat your home through winter. The key is the right system, sized properly for your home." } },
+      { "@type": "Question", "name": "Who installs it?", "acceptedAnswer": { "@type": "Answer", "text": "Our own certified team installs and commissions your system, and we handle the grant paperwork for you." } }
+    ]
+  }
+  </script>
   <!-- Fonts: Poppins (headings) + Inter (body) per brand.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1923,6 +1937,16 @@
     img.svc-intro-img, img.savings-img, img.panels-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
     /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
     #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+    /* FAQ accordion (native <details>) — soft lime band with hairline edges */
+    .faq { background: rgba(var(--rgb-accent), 0.07); border-block: 1px solid rgba(var(--rgb-forest), 0.10); padding-block: var(--section-pad); }
+    .faq-list { max-width: 52rem; margin: clamp(1.5rem, 3vw, 2.25rem) auto 0; display: grid; gap: 0.85rem; }
+    .faq-item { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); box-shadow: 0 10px 30px -24px rgba(0, 0, 0, 0.4); overflow: hidden; }
+    .faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.35rem; font-family: var(--font-heading); font-weight: 600; font-size: clamp(1rem, 1.4vw, 1.12rem); color: var(--color-text); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-ic { flex: none; width: 22px; height: 22px; color: var(--color-primary); transition: transform 0.25s var(--ease); }
+    .faq-item[open] .faq-ic { transform: rotate(45deg); }
+    .faq-a { padding: 0 1.35rem 1.25rem; }
+    .faq-a p { color: var(--color-text-muted); line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -2343,6 +2367,25 @@
     <!-- BOTTOM FORM — service-page bottom conversion ("ready for a quote?") -->
 
     <!-- 9. FINAL CTA BANNER -->
+    <!-- GRANTS-STYLE FAQ -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Heat pump questions</span>
+          <h2 id="faq-title">Home heating FAQs</h2>
+          <p class="section-intro">Heat pumps, grants and how they pair with solar.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>What is a heat pump? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>A heat pump is an efficient electric heating system that takes warmth from the air around your home to heat your rooms and hot water, much more efficiently than oil or gas.</p></div></details>
+          <details class="faq-item"><summary>Is a heat pump right for my home? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Heat pumps work best in a reasonably well-insulated home, so we assess yours first and tell you honestly whether it&rsquo;s a good fit before recommending anything.</p></div></details>
+          <!-- VERIFY WITH EGR before launch — SEAI heat pump grant value and the technical-assessment requirement not confirmed in notes; kept conservative and excluded from FAQ schema. -->
+          <details class="faq-item"><summary>Is there a grant for a heat pump? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Yes, an SEAI heat pump grant is available &mdash; we&rsquo;ll confirm the current grant value and what your home needs to qualify.</p></div></details>
+          <details class="faq-item"><summary>Can a heat pump run on my solar panels? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Yes &mdash; running a heat pump on solar electricity is a great pairing, using your own power for heating instead of buying it all from the grid.</p></div></details>
+          <details class="faq-item"><summary>Will a heat pump keep my home warm in winter? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Yes &mdash; modern heat pumps are designed for the Irish climate and heat your home through winter. The key is the right system, sized properly for your home.</p></div></details>
+          <details class="faq-item"><summary>Who installs it? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Our own certified team installs and commissions your system, and we handle the grant paperwork for you.</p></div></details>
+        </div>
+      </div>
+    </section>
     <section class="final-cta" aria-labelledby="final-cta-title">
       <div class="container final-cta-inner">
         <div class="final-logo" aria-hidden="true">

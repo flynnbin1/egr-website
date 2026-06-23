@@ -158,6 +158,22 @@
   }
   </script>
 
+  <!-- FAQ structured data — matches the visible Solar PV FAQ word-for-word. Only confirmed answers included. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much is the SEAI solar grant?", "acceptedAnswer": { "@type": "Answer", "text": "The SEAI residential solar grant is up to €1,800 — €1,500 for a 2.5kW system, €1,600 for a 3kW system and €1,800 for a 4kW system. Your installation is also 0% VAT." } },
+      { "@type": "Question", "name": "Is my roof suitable for solar?", "acceptedAnswer": { "@type": "Answer", "text": "Most Irish roofs are suitable — and if yours isn’t ideal, we also offer ground-mounted systems. We assess your roof’s orientation, shading and condition as part of your free survey." } },
+      { "@type": "Question", "name": "How long does the installation take?", "acceptedAnswer": { "@type": "Answer", "text": "Most residential installs are completed in a day by our Safe Electric certified team." } },
+      { "@type": "Question", "name": "What warranties come with the system?", "acceptedAnswer": { "@type": "Answer", "text": "Your install is backed by up to a 30-year panel warranty, plus 3-year parts and labour, 5-year workmanship cover and 24/7 system monitoring." } },
+      { "@type": "Question", "name": "Who handles the grant paperwork?", "acceptedAnswer": { "@type": "Answer", "text": "We do — the full SEAI application and your BER assessment, start to finish, with the grant deducted from your price up front." } },
+      { "@type": "Question", "name": "Will solar work on a cloudy Irish day?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — solar PV still generates on overcast days, just not at full output." } }
+    ]
+  }
+  </script>
+
   <!-- Fonts: Poppins (headings) + Inter (body) per brand.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2139,6 +2155,16 @@
     img.svc-intro-img, img.savings-img, img.panels-img, img.ground-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
     /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
     #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+    /* FAQ accordion (native <details>) — soft lime band with hairline edges */
+    .faq { background: rgba(var(--rgb-accent), 0.07); border-block: 1px solid rgba(var(--rgb-forest), 0.10); padding-block: var(--section-pad); }
+    .faq-list { max-width: 52rem; margin: clamp(1.5rem, 3vw, 2.25rem) auto 0; display: grid; gap: 0.85rem; }
+    .faq-item { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); box-shadow: 0 10px 30px -24px rgba(0, 0, 0, 0.4); overflow: hidden; }
+    .faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.35rem; font-family: var(--font-heading); font-weight: 600; font-size: clamp(1rem, 1.4vw, 1.12rem); color: var(--color-text); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-ic { flex: none; width: 22px; height: 22px; color: var(--color-primary); transition: transform 0.25s var(--ease); }
+    .faq-item[open] .faq-ic { transform: rotate(45deg); }
+    .faq-a { padding: 0 1.35rem 1.25rem; }
+    .faq-a p { color: var(--color-text-muted); line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -2616,6 +2642,24 @@
     <!-- BOTTOM FORM — service-page bottom conversion ("ready for a quote?") -->
 
     <!-- 9. FINAL CTA BANNER -->
+    <!-- GRANTS-STYLE FAQ -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Solar PV questions</span>
+          <h2 id="faq-title">Solar PV FAQs</h2>
+          <p class="section-intro">The common questions we get about going solar &mdash; answered straight.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>How much is the SEAI solar grant? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>The SEAI residential solar grant is up to &euro;1,800 &mdash; &euro;1,500 for a 2.5kW system, &euro;1,600 for a 3kW system and &euro;1,800 for a 4kW system. Your installation is also 0% VAT.</p></div></details>
+          <details class="faq-item"><summary>Is my roof suitable for solar? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Most Irish roofs are suitable &mdash; and if yours isn&rsquo;t ideal, we also offer ground-mounted systems. We assess your roof&rsquo;s orientation, shading and condition as part of your free survey.</p></div></details>
+          <details class="faq-item"><summary>How long does the installation take? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Most residential installs are completed in a day by our Safe Electric certified team.</p></div></details>
+          <details class="faq-item"><summary>What warranties come with the system? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Your install is backed by up to a 30-year panel warranty, plus 3-year parts and labour, 5-year workmanship cover and 24/7 system monitoring.</p></div></details>
+          <details class="faq-item"><summary>Who handles the grant paperwork? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>We do &mdash; the full SEAI application and your BER assessment, start to finish, with the grant deducted from your price up front.</p></div></details>
+          <details class="faq-item"><summary>Will solar work on a cloudy Irish day? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Yes &mdash; solar PV still generates on overcast days, just not at full output.</p></div></details>
+        </div>
+      </div>
+    </section>
     <section class="final-cta" aria-labelledby="final-cta-title">
       <div class="container final-cta-inner">
         <div class="final-logo" aria-hidden="true">

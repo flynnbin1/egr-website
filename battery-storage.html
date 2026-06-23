@@ -38,6 +38,19 @@
   <title>Solar Battery Storage in Tipperary &amp; Cork | EGR Solar</title>
   <meta name="description" content="Home battery storage installed across Tipperary, Cork and Munster — SAJ &amp; Sigenergy. Store your surplus solar, keep power in an outage, grant aid available. Free quote, 1-hour callback.">
 
+  <!-- FAQ structured data — matches the visible Battery FAQ word-for-word. Only confirmed answers included (power-cut/backup and retrofit Q&As are omitted, flagged VERIFY on-page). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Do I need a battery with my solar?", "acceptedAnswer": { "@type": "Answer", "text": "You don’t have to have one, but a battery stores the power your panels make during the day so you can use it in the evening instead of buying from the grid — getting more from your system." } },
+      { "@type": "Question", "name": "What size battery do I need?", "acceptedAnswer": { "@type": "Answer", "text": "The right size depends on your electricity use and your system, so there’s no single answer — we work out the best fit for your home in your free quote." } },
+      { "@type": "Question", "name": "Which battery brands do you install?", "acceptedAnswer": { "@type": "Answer", "text": "We install battery and inverter systems from SAJ and Sigenergy." } },
+      { "@type": "Question", "name": "Is the battery covered by a warranty?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — your system comes with manufacturer warranties, plus 5-year workmanship cover and 24/7 monitoring from EGR." } }
+    ]
+  }
+  </script>
   <!-- Fonts: Poppins (headings) + Inter (body) per brand.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1930,6 +1943,16 @@
     img.svc-intro-img, img.savings-img, img.panels-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
     /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
     #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+    /* FAQ accordion (native <details>) — soft lime band with hairline edges */
+    .faq { background: rgba(var(--rgb-accent), 0.07); border-block: 1px solid rgba(var(--rgb-forest), 0.10); padding-block: var(--section-pad); }
+    .faq-list { max-width: 52rem; margin: clamp(1.5rem, 3vw, 2.25rem) auto 0; display: grid; gap: 0.85rem; }
+    .faq-item { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius); box-shadow: 0 10px 30px -24px rgba(0, 0, 0, 0.4); overflow: hidden; }
+    .faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.35rem; font-family: var(--font-heading); font-weight: 600; font-size: clamp(1rem, 1.4vw, 1.12rem); color: var(--color-text); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-ic { flex: none; width: 22px; height: 22px; color: var(--color-primary); transition: transform 0.25s var(--ease); }
+    .faq-item[open] .faq-ic { transform: rotate(45deg); }
+    .faq-a { padding: 0 1.35rem 1.25rem; }
+    .faq-a p { color: var(--color-text-muted); line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -2368,6 +2391,26 @@
     <!-- BOTTOM FORM — service-page bottom conversion ("ready for a quote?") -->
 
     <!-- 9. FINAL CTA BANNER -->
+    <!-- GRANTS-STYLE FAQ -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Battery questions</span>
+          <h2 id="faq-title">Battery storage FAQs</h2>
+          <p class="section-intro">What a home battery does &mdash; and whether it&rsquo;s worth it for you.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Do I need a battery with my solar? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>You don&rsquo;t have to have one, but a battery stores the power your panels make during the day so you can use it in the evening instead of buying from the grid &mdash; getting more from your system.</p></div></details>
+          <!-- VERIFY WITH EGR before launch — backup-during-outage capability is system-specific; kept conservative and excluded from FAQ schema. -->
+          <details class="faq-item"><summary>Will a battery keep my power on in an outage? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Some battery setups can provide backup power during an outage, but it depends on the system and how it&rsquo;s set up. We&rsquo;ll tell you exactly what your setup can do before you order.</p></div></details>
+          <details class="faq-item"><summary>What size battery do I need? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>The right size depends on your electricity use and your system, so there&rsquo;s no single answer &mdash; we work out the best fit for your home in your free quote.</p></div></details>
+          <details class="faq-item"><summary>Which battery brands do you install? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>We install battery and inverter systems from SAJ and Sigenergy.</p></div></details>
+          <!-- VERIFY WITH EGR before launch — retrofit compatibility with an existing system varies; kept conservative and excluded from FAQ schema. -->
+          <details class="faq-item"><summary>Can I add a battery to my existing solar? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>In many cases, yes &mdash; a battery can be added to an existing solar PV system. We&rsquo;ll check your current setup and confirm what&rsquo;s possible.</p></div></details>
+          <details class="faq-item"><summary>Is the battery covered by a warranty? <svg class="faq-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="128" y1="40" x2="128" y2="216"/></svg></summary><div class="faq-a"><p>Yes &mdash; your system comes with manufacturer warranties, plus 5-year workmanship cover and 24/7 monitoring from EGR.</p></div></details>
+        </div>
+      </div>
+    </section>
     <section class="final-cta" aria-labelledby="final-cta-title">
       <div class="container final-cta-inner">
         <div class="final-logo" aria-hidden="true">
