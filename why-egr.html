@@ -36,7 +36,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Why Choose EGR? | Solar Specialists Since 2017 | EGR Solar</title>
-  <meta name="description" content="Why choose EGR for solar? A local Irish solar specialist installing since 2017 — 2,000+ systems, 5.0 star rating from 93 Google reviews, up to 30-year warranties and the grant handled. Free quote.">
+  <meta name="description" content="Why choose EGR for solar? A local installer since 2017 — 2,000+ systems, a 5.0 rating from 93 reviews, up to 30-year warranties, grant handled. Free quote.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://egr.ie/why-egr.html">
+
+  <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://egr.ie/why-egr.html">
+  <meta property="og:title" content="Why Choose EGR? | Solar Specialists Since 2017 | EGR Solar">
+  <meta property="og:description" content="Why choose EGR for solar? A local installer since 2017 — 2,000+ systems, a 5.0 rating from 93 reviews, up to 30-year warranties, grant handled. Free quote.">
+  <!-- INTERIM OG image — shared interim landscape shot; replace with a real 1200x630 install photo before launch. Applies to og:image, twitter:image and the JSON-LD "image" below. -->
+  <meta property="og:image" content="https://egr.ie/images/ai/hero-home-solar.jpg">
+  <meta property="og:locale" content="en_IE">
+  <meta property="og:site_name" content="EGR Solar">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Choose EGR? | Solar Specialists Since 2017 | EGR Solar">
+  <meta name="twitter:description" content="Why choose EGR for solar? A local installer since 2017 — 2,000+ systems, a 5.0 rating from 93 reviews, up to 30-year warranties, grant handled. Free quote.">
+  <meta name="twitter:image" content="https://egr.ie/images/ai/hero-home-solar.jpg">
+
+  <!-- ============================================================
+       Structured data (JSON-LD). Every value traces to a confirmed fact
+       in brand.md / egr-client-notes.md. FLAGS:
+       * geo (latitude/longitude): OMITTED - add once confirmed; wrong coords worse than none.
+       * email (info@egr.ie): soft placeholder - confirm before launch.
+       * openingHours Mon-Fri 09:00-17:00 confirmed; worth a final check at review.
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Electrician",
+        "@id": "https://egr.ie/#business",
+        "name": "EGR Solar",
+        "legalName": "Eco Green Resources Ltd",
+        "url": "https://egr.ie/",
+        "telephone": "+353818911910",
+        "email": "info@egr.ie",
+        "foundingDate": "2017",
+        "image": "https://egr.ie/images/ai/hero-home-solar.jpg",
+        "logo": "https://egr.ie/images/brand/egr-png-trans-logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Unit 10, Tipperary Technology Park, Rosanna Road",
+          "addressLocality": "Tipperary",
+          "addressRegion": "County Tipperary",
+          "postalCode": "E34 H725",
+          "addressCountry": "IE"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://egr.ie/" },
+          { "@type": "ListItem", "position": 2, "name": "Why EGR", "item": "https://egr.ie/why-egr.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Fonts: Poppins (headings) + Inter (body) per brand.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1935,6 +2004,7 @@
     .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: clamp(1.25rem, 2.5vw, 2rem); max-width: 62rem; margin: 0 auto; }
     .team-card { display: flex; flex-direction: column; }
     .team-photo { aspect-ratio: 1 / 1; margin-bottom: 1rem; }
+    img.team-photo { display: block; width: 100%; height: auto; aspect-ratio: auto; border-radius: var(--radius); }
     .team-card h3 { font-family: var(--font-heading); font-weight: 600; font-size: 1.12rem; color: var(--color-text); margin: 0; }
     .team-role { font-size: 0.92rem; font-weight: 600; color: var(--color-primary); margin-top: 0.2rem; }
     .team-role.is-tbc { color: var(--color-text-muted); font-weight: 500; font-style: italic; }
@@ -2002,7 +2072,6 @@
             <a class="nav-dd-link" role="menuitem" href="solar-pv.html">Solar PV</a>
             <a class="nav-dd-link" role="menuitem" href="battery-storage.html">Battery Storage</a>
             <a class="nav-dd-link" role="menuitem" href="ev-charging.html">EV Charging</a>
-            <a class="nav-dd-link" role="menuitem" href="home-heating.html">Home Heating</a>
           </div>
         </div>
         <a class="link" href="locations/index.html">Locations</a>
@@ -2148,32 +2217,21 @@
           <h2 id="team-title">A small, local team who'll know your name</h2>
           <p class="section-intro">EGR is a close-knit, family-feel team based in Tipperary — the same people who quote you, design your system and look after you long afterwards.</p>
         </div>
-        <!-- FLAG: Bernard O'Connor (Owner) & Zoe Kinahan (Senior Manager) are CONFIRMED. The 3 cards below are placeholders — get real names, roles and photos from EGR. -->
         <div class="team-grid">
           <div class="team-card">
-            <div class="img-ph team-photo" role="img" aria-label="Photo of Bernard O'Connor — to be supplied"><svg class="img-ph-icon" viewBox="0 0 256 256" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="156" cy="100" r="12" fill="currentColor"/><path d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg><span class="img-ph-label">Photo to be supplied</span></div>
+            <img class="team-photo" src="images/real/bernard-oconnor.jpg" alt="Bernard O'Connor, Owner at EGR" width="1067" height="1600" loading="lazy">
             <h3>Bernard O'Connor</h3>
             <p class="team-role">Owner</p>
           </div>
           <div class="team-card">
-            <div class="img-ph team-photo" role="img" aria-label="Photo of Zoe Kinahan — to be supplied"><svg class="img-ph-icon" viewBox="0 0 256 256" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="156" cy="100" r="12" fill="currentColor"/><path d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg><span class="img-ph-label">Photo to be supplied</span></div>
+            <img class="team-photo" src="images/real/zoe-kinahan.jpg" alt="Zoe Kinahan, Senior Manager at EGR" width="1067" height="1600" loading="lazy">
             <h3>Zoe Kinahan</h3>
             <p class="team-role">Senior Manager</p>
           </div>
           <div class="team-card">
-            <div class="img-ph team-photo" role="img" aria-label="Photo of team member — to be supplied"><svg class="img-ph-icon" viewBox="0 0 256 256" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="156" cy="100" r="12" fill="currentColor"/><path d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg><span class="img-ph-label">Photo to be supplied</span></div>
-            <h3>Team Member</h3>
-            <p class="team-role is-tbc">Role to be confirmed</p>
-          </div>
-          <div class="team-card">
-            <div class="img-ph team-photo" role="img" aria-label="Photo of team member — to be supplied"><svg class="img-ph-icon" viewBox="0 0 256 256" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="156" cy="100" r="12" fill="currentColor"/><path d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg><span class="img-ph-label">Photo to be supplied</span></div>
-            <h3>Team Member</h3>
-            <p class="team-role is-tbc">Role to be confirmed</p>
-          </div>
-          <div class="team-card">
-            <div class="img-ph team-photo" role="img" aria-label="Photo of team member — to be supplied"><svg class="img-ph-icon" viewBox="0 0 256 256" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="156" cy="100" r="12" fill="currentColor"/><path d="M147.31,164,173,138.34a8,8,0,0,1,11.31,0L224,178.06" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0L191.31,208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg><span class="img-ph-label">Photo to be supplied</span></div>
-            <h3>Team Member</h3>
-            <p class="team-role is-tbc">Role to be confirmed</p>
+            <img class="team-photo" src="images/real/pj-obrien.jpg" alt="PJ O'Brien, Sales Rep at EGR" width="1067" height="1600" loading="lazy">
+            <h3>PJ O'Brien</h3>
+            <p class="team-role">Sales Rep</p>
           </div>
         </div>
       </div>
@@ -2260,7 +2318,6 @@
             <li><a href="solar-pv.html">Solar PV</a></li>
             <li><a href="battery-storage.html">Battery Storage</a></li>
             <li><a href="ev-charging.html">EV Charging</a></li>
-            <li><a href="home-heating.html">Home Heating</a></li>
           </ul>
         </nav>
 

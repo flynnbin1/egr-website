@@ -35,8 +35,77 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spread the Cost of Solar | Solar That Pays for Itself | EGR Solar</title>
-  <meta name="description" content="Spread the cost of your solar system over a term that suits you — typically 3 to 5 years, or up to 10 — while it saves you money from day one. SEAI grant handled and deducted up front. Free quote.">
+  <title>Spread the Cost of Solar | Solar That Pays for Itself | EGR</title>
+  <meta name="description" content="Spread the cost of your solar over a term that suits you — while it saves from day one. SEAI grant handled and deducted up front. Free quote, 1-hour callback.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://egr.ie/spread-the-cost.html">
+
+  <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://egr.ie/spread-the-cost.html">
+  <meta property="og:title" content="Spread the Cost of Solar | Solar That Pays for Itself | EGR Solar">
+  <meta property="og:description" content="Spread the cost of your solar over a term that suits you — while it saves from day one. SEAI grant handled and deducted up front. Free quote, 1-hour callback.">
+  <!-- INTERIM OG image — shared interim landscape shot; replace with a real 1200x630 install photo before launch. Applies to og:image, twitter:image and the JSON-LD "image" below. -->
+  <meta property="og:image" content="https://egr.ie/images/ai/hero-home-solar.jpg">
+  <meta property="og:locale" content="en_IE">
+  <meta property="og:site_name" content="EGR Solar">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Spread the Cost of Solar | Solar That Pays for Itself | EGR Solar">
+  <meta name="twitter:description" content="Spread the cost of your solar over a term that suits you — while it saves from day one. SEAI grant handled and deducted up front. Free quote, 1-hour callback.">
+  <meta name="twitter:image" content="https://egr.ie/images/ai/hero-home-solar.jpg">
+
+  <!-- ============================================================
+       Structured data (JSON-LD). Every value traces to a confirmed fact
+       in brand.md / egr-client-notes.md. FLAGS:
+       * geo (latitude/longitude): OMITTED - add once confirmed; wrong coords worse than none.
+       * email (info@egr.ie): soft placeholder - confirm before launch.
+       * openingHours Mon-Fri 09:00-17:00 confirmed; worth a final check at review.
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Electrician",
+        "@id": "https://egr.ie/#business",
+        "name": "EGR Solar",
+        "legalName": "Eco Green Resources Ltd",
+        "url": "https://egr.ie/",
+        "telephone": "+353818911910",
+        "email": "info@egr.ie",
+        "foundingDate": "2017",
+        "image": "https://egr.ie/images/ai/hero-home-solar.jpg",
+        "logo": "https://egr.ie/images/brand/egr-png-trans-logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Unit 10, Tipperary Technology Park, Rosanna Road",
+          "addressLocality": "Tipperary",
+          "addressRegion": "County Tipperary",
+          "postalCode": "E34 H725",
+          "addressCountry": "IE"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://egr.ie/" },
+          { "@type": "ListItem", "position": 2, "name": "Spread the Cost", "item": "https://egr.ie/spread-the-cost.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Fonts: Poppins (headings) + Inter (body) per brand.md -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1314,6 +1383,14 @@
     .gf-split .section-intro { margin: 0; max-width: none; }
     .gf-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
     @media (max-width: 880px) { .gf-split { grid-template-columns: 1fr; } }
+
+    /* SEAI grant cross-link — dedicated two-column split (own image sizing, not tied to .gf-img) */
+    .gf-cross-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .gf-cross-split .section-head { text-align: left; max-width: none; margin: 0 0 1.1rem; }
+    .gf-cross-split .section-intro { margin: 0; max-width: none; }
+    .gf-cross-split .grant-cta { text-align: left; }
+    .gf-cross-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+    @media (max-width: 880px) { .gf-cross-split { grid-template-columns: 1fr; } .gf-cross-split .grant-cta { text-align: center; } }
     .gf-example { max-width: 52rem; margin: clamp(1.5rem, 3vw, 2.25rem) auto 0; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: clamp(1.85rem, 3.5vw, 2.85rem); }
     .gf-example .ex-label { display: inline-block; font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-pill); padding: 0.32rem 0.85rem; margin-bottom: 1.3rem; }
     .gf-example ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
@@ -2046,7 +2123,6 @@
             <a class="nav-dd-link" role="menuitem" href="solar-pv.html">Solar PV</a>
             <a class="nav-dd-link" role="menuitem" href="battery-storage.html">Battery Storage</a>
             <a class="nav-dd-link" role="menuitem" href="ev-charging.html">EV Charging</a>
-            <a class="nav-dd-link" role="menuitem" href="home-heating.html">Home Heating</a>
           </div>
         </div>
         <a class="link" href="locations/index.html">Locations</a>
@@ -2177,15 +2253,18 @@
 
     <!-- 4. CROSS-LINK: grants -->
     <section class="gf-handle" aria-labelledby="cross-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="sec-eyebrow">Don&rsquo;t forget the grant</span>
-          <h2 id="cross-title">The SEAI grant brings the price down first</h2>
-          <p class="section-intro">Before you spread anything, up to &euro;1,800 comes straight off your price with the SEAI grant, plus 0% VAT &mdash; and we handle all of it for you.</p>
+      <div class="container gf-cross-split">
+        <div class="gf-cross-copy">
+          <div class="section-head">
+            <span class="sec-eyebrow">Don&rsquo;t forget the grant</span>
+            <h2 id="cross-title">The SEAI grant brings the price down first</h2>
+            <p class="section-intro">Before you spread anything, up to &euro;1,800 comes straight off your price with the SEAI grant, plus 0% VAT &mdash; and we handle all of it for you.</p>
+          </div>
+          <div class="grant-cta">
+            <a class="btn-outline" href="grants.html">See the SEAI grants <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+          </div>
         </div>
-        <div class="grant-cta">
-          <a class="btn-outline" href="grants.html">See the SEAI grants <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
-        </div>
+        <img class="gf-cross-img" src="images/real/grant-consultation.jpg" alt="EGR guiding a homeowner through the solar grant process" loading="lazy">
       </div>
     </section>
 
@@ -2270,7 +2349,6 @@
             <li><a href="solar-pv.html">Solar PV</a></li>
             <li><a href="battery-storage.html">Battery Storage</a></li>
             <li><a href="ev-charging.html">EV Charging</a></li>
-            <li><a href="home-heating.html">Home Heating</a></li>
           </ul>
         </nav>
 

@@ -60,8 +60,6 @@
   <!-- ============================================================
        Structured data (JSON-LD). Every value below traces to a confirmed
        fact in brand.md / egr-client-notes.md. FLAGS:
-       • aggregateRating (5.0 / 93 reviews): REVIEW COUNT/RATING — confirm
-         current before launch; update if changed (these move over time).
        • geo (latitude/longitude): OMITTED — not reliably derivable from the
          address. Add a "geo" block once confirmed coordinates are supplied;
          wrong coordinates are worse than none.
@@ -117,12 +115,7 @@
           { "@type": "AdministrativeArea", "name": "County Kildare" },
           { "@type": "AdministrativeArea", "name": "County Laois" },
           { "@type": "AdministrativeArea", "name": "County Offaly" }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "93"
-        }
+        ]
       },
       {
         "@type": "Service",
@@ -181,7 +174,7 @@
 
   <!-- Preload hero LCP image. NOTE: AI-generated hero (images/ai/) used as a CSS background;
        swap to a real wide install photo + real <img alt="…"> when available (a11y/SEO). -->
-  <link rel="preload" as="image" href="images/ai/why-solar-panels.jpg">
+  <link rel="preload" as="image" href="images/real/hero-banner-solar-pv.jpg">
 
   <style>
     /* ============================================================
@@ -589,7 +582,7 @@
       position: absolute;
       inset: 0;
       z-index: -2;
-      background-image: url("images/ai/why-solar-panels.jpg");
+      background-image: url("images/real/hero-banner-solar-pv.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -2203,7 +2196,6 @@
             <a class="nav-dd-link" role="menuitem" href="solar-pv.html">Solar PV</a>
             <a class="nav-dd-link" role="menuitem" href="battery-storage.html">Battery Storage</a>
             <a class="nav-dd-link" role="menuitem" href="ev-charging.html">EV Charging</a>
-            <a class="nav-dd-link" role="menuitem" href="home-heating.html">Home Heating</a>
           </div>
         </div>
         <a class="link" href="locations/index.html">Locations</a>
@@ -2282,7 +2274,7 @@
           <p>EGR design and install a wide range of solar PV systems, each tailored to the property — and fully SEAI grant-aided for homes. Our engineers, electricians and roofers are trained to the latest standards, every system is registered with a certifying body, and your install is backed by an insurance-backed guarantee for genuine peace of mind.</p>
         </div>
         <!-- IMAGE: real EGR solar PV rooftop install photo to be supplied -->
-        <img class="svc-intro-img" src="images/ai/home-solar-install.jpg" alt="Solar PV panels installed on the roof of an Irish home by EGR" loading="lazy">
+        <img class="svc-intro-img" src="images/real/egr-van-home.jpg" alt="White EGR.ie van outside an Irish home with rooftop solar panels installed by EGR" loading="lazy">
       </div>
     </section>
 
@@ -2305,7 +2297,7 @@
 
         <div class="panels-split">
           <!-- IMAGE: real EGR rooftop solar-panel close-up to be supplied -->
-          <img class="panels-img" src="images/ai/solar-panels-roof.jpg" alt="Close-up of EGR-installed solar PV panels on a roof" loading="lazy">
+          <img class="panels-img" src="images/real/solar-roof-fields.jpg" alt="Close-up of EGR solar PV panels on a slate roof with green fields beyond" loading="lazy">
           <ul class="panel-points">
             <li class="panel-point">
               <span class="pp-ic" aria-hidden="true"><!-- Phosphor: medal --><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><circle cx="128" cy="96" r="80"/><circle cx="128" cy="96" r="48"/><polyline points="176 160 176 240 127.99 216 80 240 80 160.01"/></svg></span>
@@ -2375,7 +2367,7 @@
             </div>
           </div>
           <!-- IMAGE: real EGR rooftop solar install / aerial to be supplied -->
-          <img class="savings-img" src="images/ai/home-solar-install-rural.jpg" alt="EGR solar PV installation on a rural Irish home" loading="lazy">
+          <img class="savings-img" src="images/real/egr-installer-roof.jpg" alt="EGR installer fitting a solar PV panel on a roof" loading="lazy">
         </div>
         <p class="savings-note"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="87.66" y1="56.73" x2="83.5" y2="33.09"/><line x1="56.69" y1="76.46" x2="37.03" y2="62.69"/><line x1="48.73" y1="112.31" x2="25.09" y2="116.48"/><line x1="123.52" y1="64.69" x2="137.28" y2="45.03"/><path d="M96,144a68.06,68.06,0,1,1,68,72H84a44,44,0,1,1,14.2-85.66"/><path d="M59.65,135.35a48,48,0,1,1,80.19-50.94"/></svg> And yes — solar PV still generates on overcast Irish days. Just not at full output.</p>
       </div>
@@ -2384,11 +2376,7 @@
     <!-- GROUND-MOUNTED SOLAR -->
     <section class="ground" aria-labelledby="ground-title">
       <div class="container ground-split">
-        <!-- PLACEHOLDER — replace with real ground-mount install photo from client. Intended file: images/ground-mount-1.jpg, class="ground-img", alt="Ground-mounted solar array on a frame in a rural Irish field" -->
-        <div class="ground-img img-ph" role="img" aria-label="Ground-mounted solar install photo — coming from client">
-          <svg class="img-ph-icon" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8"/><circle cx="156" cy="100" r="20"/><path d="M32.7,201.78l50-50a8,8,0,0,1,11.31,0l36.69,36.68a8,8,0,0,0,11.31,0l20.69-20.68a8,8,0,0,1,11.31,0L223.3,206"/></svg>
-          <span class="img-ph-label">Ground-mount install photo &mdash; coming from client</span>
-        </div>
+        <img class="ground-img" src="images/real/ground-mount-garden.jpg" alt="Ground-mounted solar panel array in the back garden of an Irish home" loading="lazy">
         <div class="ground-copy">
           <span class="sec-eyebrow">Ground-mounted solar</span>
           <h2 id="ground-title">No roof space? Ground-mounted solar.</h2>
@@ -2740,7 +2728,6 @@
             <li><a href="solar-pv.html">Solar PV</a></li>
             <li><a href="battery-storage.html">Battery Storage</a></li>
             <li><a href="ev-charging.html">EV Charging</a></li>
-            <li><a href="home-heating.html">Home Heating</a></li>
           </ul>
         </nav>
 
