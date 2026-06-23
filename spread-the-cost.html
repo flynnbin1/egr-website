@@ -1323,6 +1323,24 @@
     .gf-example li svg { flex: none; width: 26px; height: 26px; color: var(--color-primary); margin-top: 2px; }
     .gf-example li strong { color: var(--color-primary); font-weight: 700; }
     .gf-example .ex-foot { margin: 1.3rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--color-border); font-size: 0.85rem; color: var(--color-text-muted); font-style: italic; line-height: 1.6; }
+
+    /* SAVINGS ILLUSTRATOR — interactive; reuses the gf-example panel look. Soft lime band w/ hairline edges. */
+    .si { background: rgba(var(--rgb-accent), 0.07); border-block: 1px solid rgba(var(--rgb-forest), 0.10); padding-block: var(--section-pad); }
+    .si-card { max-width: 52rem; margin: clamp(1.5rem, 3vw, 2.25rem) auto 0; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: clamp(1.85rem, 3.5vw, 2.85rem); }
+    .si-label-pill { display: inline-block; font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-pill); padding: 0.32rem 0.85rem; margin-bottom: 1.4rem; }
+    .si-control label { display: block; font-weight: 600; color: var(--color-text); margin-bottom: 0.65rem; line-height: 1.5; }
+    .si-bill-val { color: var(--color-primary); font-weight: 700; }
+    .si-slider { width: 100%; accent-color: var(--color-primary); height: 1.75rem; cursor: pointer; }
+    .si-scale { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--color-text-muted); margin-top: 0.1rem; }
+    .si-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.75rem, 2vw, 1.25rem); margin: clamp(1.5rem, 3vw, 2rem) 0 0; }
+    .si-result { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.1rem 1rem; text-align: center; }
+    .si-fig { display: block; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.5rem, 3.2vw, 2.1rem); color: var(--color-primary); line-height: 1.1; }
+    .si-cap { display: block; font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.4rem; line-height: 1.35; }
+    .si-assume { margin: 1.4rem 0 0; font-size: 0.9rem; color: var(--color-text); line-height: 1.6; }
+    .si-assume strong { color: var(--color-primary); }
+    .si-foot { margin: 1rem 0 0; padding-top: 1.1rem; border-top: 1px solid var(--color-border); font-size: 0.85rem; color: var(--color-text-muted); font-style: italic; line-height: 1.6; }
+    .si-cta { margin-top: 1.6rem; text-align: center; }
+    @media (max-width: 520px) { .si-results { grid-template-columns: 1fr; } }
     .final-cta-inner { max-width: 46rem; margin: 0 auto; }
 
     /* white-knockout logo (cropped from its padded square, same technique as the nav) */
@@ -2127,6 +2145,35 @@
       </div>
     </section>
 
+    <!-- 3b. SAVINGS ILLUSTRATOR (interactive, vanilla JS) -->
+    <section class="si" aria-labelledby="si-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="sec-eyebrow">Try your own numbers</span>
+          <h2 id="si-title">See roughly what solar could save you</h2>
+          <p class="section-intro">Slide to your typical monthly electricity bill for an illustrative idea of how solar could pay its way over time.</p>
+        </div>
+        <div class="si-card">
+          <span class="si-label-pill">Illustrative example &mdash; not a quote</span>
+          <div class="si-control">
+            <label for="si-bill">Your approximate monthly electricity bill: <span class="si-bill-val" id="si-bill-val">&euro;150</span></label>
+            <input class="si-slider" type="range" id="si-bill" min="60" max="350" step="10" value="150" aria-describedby="si-assume" aria-label="Your approximate monthly electricity bill in euro">
+            <div class="si-scale" aria-hidden="true"><span>&euro;60</span><span>&euro;350+</span></div>
+          </div>
+          <div class="si-results">
+            <div class="si-result"><span class="si-fig" id="si-year">&euro;630</span><span class="si-cap">estimated savings per year</span></div>
+            <div class="si-result"><span class="si-fig" id="si-ten">&euro;6,300</span><span class="si-cap">illustrative savings over 10 years</span></div>
+            <div class="si-result"><span class="si-fig" id="si-fifteen">&euro;9,450</span><span class="si-cap">illustrative savings over 15 years</span></div>
+          </div>
+          <p class="si-assume" id="si-assume">These figures assume solar offsets about <strong>35%</strong> of your electricity bill &mdash; a deliberately cautious estimate (many homes do better). It shows savings only &mdash; it is not a price or a quote.</p>
+          <p class="si-foot">Illustrative only &mdash; your actual savings depend on your home, roof, energy use and system size. We&rsquo;ll give you exact figures with your free quote.</p>
+          <div class="si-cta">
+            <a class="btn-amber" href="get-a-quote/index.html">Get your free quote <span class="arrow"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><polyline points="144 56 216 128 144 200"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 4. CROSS-LINK: grants -->
     <section class="gf-handle" aria-labelledby="cross-title">
       <div class="container">
@@ -2546,6 +2593,31 @@
       if (a) a.addEventListener('click', accept);
       if (r) r.addEventListener('click', reject);
     })();
+  </script>
+
+  <!-- Savings illustrator — vanilla JS, illustrative only. No storage; state in local vars only. -->
+  <script>
+  (function () {
+    var OFFSET = 0.35; // solar assumed to offset ~35% of the electricity bill (conservative)
+    var slider = document.getElementById('si-bill');
+    if (!slider) return;
+    var billVal = document.getElementById('si-bill-val');
+    var elYear  = document.getElementById('si-year');
+    var elTen   = document.getElementById('si-ten');
+    var elFif   = document.getElementById('si-fifteen');
+    function euro(n) { return '€' + Math.round(n).toLocaleString('en-IE'); }
+    function roundTo(n, step) { return Math.round(n / step) * step; }
+    function update() {
+      var bill = parseInt(slider.value, 10);
+      billVal.textContent = euro(bill) + (bill >= 350 ? '+' : '');
+      var yearly = bill * 12 * OFFSET;
+      elYear.textContent = euro(roundTo(yearly, 10));
+      elTen.textContent  = euro(roundTo(yearly * 10, 50));
+      elFif.textContent  = euro(roundTo(yearly * 15, 50));
+    }
+    slider.addEventListener('input', update);
+    update();
+  })();
   </script>
 </body>
 </html>
