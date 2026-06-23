@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url><loc>https://egr.ie/</loc><lastmod>2026-06-23</lastmod></url>
+
+  <!-- Residential + service/sector pages -->
+  <url><loc>https://egr.ie/residential.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/solar-pv.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/battery-storage.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/ev-charging.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/commercial.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/agricultural.html</loc><lastmod>2026-06-23</lastmod></url>
+
+  <!-- Grant & finance / info -->
+  <url><loc>https://egr.ie/grants.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/spread-the-cost.html</loc><lastmod>2026-06-23</lastmod></url>
+
+  <!-- Trust + conversion -->
+  <url><loc>https://egr.ie/why-egr.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/reviews.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/contact.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/get-a-quote/</loc><lastmod>2026-06-23</lastmod></url>
+
+  <!-- Locations hub + 15 county pages -->
+  <url><loc>https://egr.ie/locations/</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/cork.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/limerick.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/tipperary.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/clare.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/kerry.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/waterford.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/wexford.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/kilkenny.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/carlow.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/wicklow.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/kildare.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/laois.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/offaly.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/dublin.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/locations/galway.html</loc><lastmod>2026-06-23</lastmod></url>
+
+  <!-- Legal -->
+  <url><loc>https://egr.ie/privacy-policy.html</loc><lastmod>2026-06-23</lastmod></url>
+  <url><loc>https://egr.ie/cookie-policy.html</loc><lastmod>2026-06-23</lastmod></url>
+
+</urlset>
