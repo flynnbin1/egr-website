@@ -4,6 +4,156 @@
       "source": "/about",
       "destination": "/why-egr",
       "permanent": true
+    },
+    {
+      "source": "/solar-pv-new",
+      "destination": "/solar-pv",
+      "permanent": true
+    },
+    {
+      "source": "/residential-new",
+      "destination": "/residential",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-industrial",
+      "destination": "/commercial",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-industrial-new",
+      "destination": "/commercial",
+      "permanent": true
+    },
+    {
+      "source": "/agriculture",
+      "destination": "/agricultural",
+      "permanent": true
+    },
+    {
+      "source": "/battery-storage-2",
+      "destination": "/battery-storage",
+      "permanent": true
+    },
+    {
+      "source": "/battery-storage-new",
+      "destination": "/battery-storage",
+      "permanent": true
+    },
+    {
+      "source": "/our-team-new",
+      "destination": "/why-egr",
+      "permanent": true
+    },
+    {
+      "source": "/seai-grant",
+      "destination": "/grants",
+      "permanent": true
+    },
+    {
+      "source": "/funding",
+      "destination": "/spread-the-cost",
+      "permanent": true
+    },
+    {
+      "source": "/finance-ireland",
+      "destination": "/spread-the-cost",
+      "permanent": true
+    },
+    {
+      "source": "/contact-new",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/site-survey",
+      "destination": "/get-a-quote",
+      "permanent": true
+    },
+    {
+      "source": "/copyright-notice",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/test-page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/benefits-of-renewable-energy-in-ireland",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/seai-renewable-energy-grants-in-limerick-2",
+      "destination": "/grants",
+      "permanent": true
+    },
+    {
+      "source": "/blog/minister-creed-confirms-the-opening-of-e10-million-renewable-energy-grants-for-farms",
+      "destination": "/agricultural",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ireland-sees-biggest-drop-in-carbon-emissions-in-almost-a-decade",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/department-of-agriculture-extends-solar-pv-grant-support",
+      "destination": "/agricultural",
+      "permanent": true
+    },
+    {
+      "source": "/blog/department-gives-green-light-for-enhanced-solar-tams-supports-mref",
+      "destination": "/agricultural",
+      "permanent": true
+    },
+    {
+      "source": "/blog/all-you-need-to-know-about-electric-vehicles",
+      "destination": "/ev-charging",
+      "permanent": true
+    },
+    {
+      "source": "/blog/grant-information-for-solar-electricity",
+      "destination": "/grants",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bringing-locals-together-to-develop-sustainable-energy",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/5-essential-benefits-of-solar-pv-systems-for-irish-homes-and-businesses",
+      "destination": "/solar-pv",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-agricultural-businesses-in-ireland-can-benefit-from-solar-energy",
+      "destination": "/agricultural",
+      "permanent": true
+    },
+    {
+      "source": "/blog/egr-introduces-the-saj-hs3-the-all-in-one-smart-home-energy-storage-solution",
+      "destination": "/battery-storage",
+      "permanent": true
+    },
+    {
+      "source": "/blog/all-you-need-to-know-about-installing-solar-panels-in-tipperary",
+      "destination": "/solar-pv",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ground-mounted-solar-panels-everything-you-need-to-know",
+      "destination": "/solar-pv",
+      "permanent": true
     }
   ]
 }
