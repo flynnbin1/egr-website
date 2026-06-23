@@ -1308,6 +1308,12 @@
     .gf-vat { background: var(--color-white); padding-block: var(--section-pad); }
     .gf-spread { background: rgba(var(--rgb-accent), 0.07); border-block: 1px solid rgba(var(--rgb-forest), 0.10); padding-block: var(--section-pad); }
     .gf-handle { background: var(--color-surface); padding-block: var(--section-pad); }
+    /* gf-handle two-column: supporting image beside the copy (matches the savings/svc-intro split) */
+    .gf-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .gf-split .section-head { text-align: left; max-width: none; margin: 0; }
+    .gf-split .section-intro { margin: 0; max-width: none; }
+    .gf-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+    @media (max-width: 880px) { .gf-split { grid-template-columns: 1fr; } }
     .gf-example { max-width: 52rem; margin: clamp(1.5rem, 3vw, 2.25rem) auto 0; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: clamp(1.85rem, 3.5vw, 2.85rem); }
     .gf-example .ex-label { display: inline-block; font-family: var(--font-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-pill); padding: 0.32rem 0.85rem; margin-bottom: 1.3rem; }
     .gf-example ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
@@ -2072,12 +2078,14 @@
 
     <!-- 1. SPREAD OVER UP TO 10 YEARS -->
     <section class="gf-handle" aria-labelledby="term-title">
-      <div class="container">
+      <div class="container gf-split">
         <div class="section-head">
           <span class="sec-eyebrow">A term that suits you</span>
           <h2 id="term-title">Spread the cost over up to 10 years</h2>
           <p class="section-intro">You can spread the cost over a term that suits &mdash; typically 3 to 5 years, or up to 10 &mdash; so your system works for you straight away while you pay in manageable monthly amounts.</p>
         </div>
+        <!-- PLACEHOLDER — swap to real install photo before launch. Intended file: images/real/spread-the-cost-install.jpg, class="gf-img", landscape ~1200x630 -->
+        <img class="gf-img" src="images/ai/home-solar-install.jpg" alt="Solar PV panels installed on the roof of an Irish home by EGR" loading="lazy">
       </div>
     </section>
 
