@@ -126,7 +126,7 @@
 
   <!-- Preload hero LCP image. NOTE: AI-generated hero (images/ai/) used as a CSS background;
        swap to a real wide install photo + real <img alt="…"> when available (a11y/SEO). -->
-  <link rel="preload" as="image" href="images/ai/hero-day.jpg">
+  <link rel="preload" as="image" href="images/ai/hero-home.jpg">
 
   <style>
     /* ============================================================
@@ -534,7 +534,7 @@
       position: absolute;
       inset: 0;
       z-index: -2;
-      background-image: url("images/ai/hero-day.jpg");
+      background-image: url("images/ai/hero-home.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -555,63 +555,8 @@
       );
     }
 
-    /* day/night hero: day = .hero::before; the night layer fades in over it on toggle */
-    .hero-night {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background: url("images/ai/hero-night.jpg") center / cover no-repeat;
-    }
-    /* === Toggle transition style — flip ONE class on <section class="hero …">:
-           hero--wipe  = vertical wipe (default)
-           hero--fade  = simple opacity crossfade (fallback if the two images
-                         mismatch at the wipe line) === */
-    /* WIPE (default): night reveals top → bottom over the day background */
-    .hero--wipe .hero-night { clip-path: inset(0 0 100% 0); transition: clip-path 0.6s var(--ease); }
-    .hero--wipe.is-night .hero-night { clip-path: inset(0 0 0 0); }
-    /* CROSSFADE (alternative) */
-    .hero--fade .hero-night { opacity: 0; transition: opacity 0.6s var(--ease); }
-    .hero--fade.is-night .hero-night { opacity: 1; }
-
     /* hero primary CTA (replaces the removed form) */
     .hero-cta { margin: 0.25rem 0 1.9rem; }
-
-    /* Morning / Night segmented toggle — sits low in the hero copy */
-    .hero-toggle {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 2rem;
-      padding: 4px;
-      border-radius: var(--radius-pill);
-      background: rgba(var(--rgb-white), 0.12);
-      border: 1px solid rgba(var(--rgb-white), 0.28);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-    .hero-toggle-input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-    .hero-toggle-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5ch;
-      padding: 0.5rem 1.1rem;
-      border-radius: var(--radius-pill);
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--color-white);
-      white-space: nowrap;
-      cursor: pointer;
-      transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
-    }
-    .hero-toggle-pill .ht-ic { width: 16px; height: 16px; flex: none; }
-    .hero-toggle-input:checked + .hero-toggle-pill {
-      background: var(--color-cta);
-      color: var(--color-text);
-    }
-    .hero-toggle-input:focus-visible + .hero-toggle-pill {
-      outline: 3px solid var(--color-cta);
-      outline-offset: 2px;
-    }
 
     /* pull nav up over the hero so the photo runs under the bar */
     .nav { margin-bottom: calc(-1 * var(--nav-h)); }
@@ -1889,10 +1834,7 @@
 
   <!-- 3. HERO -->
   <main id="main" tabindex="-1">
-    <section class="hero hero--wipe" aria-labelledby="hero-title">
-      <!-- day/night background layers: day = .hero::before; night reveals on top.
-           Transition style: hero--wipe (vertical wipe) — swap to hero--fade for a crossfade. -->
-      <div class="hero-night" aria-hidden="true"></div>
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner container">
 
         <!-- LEFT: offer-led copy -->
@@ -1910,14 +1852,6 @@
           <div class="trust-row reveal d4">
             <span class="chip"><span class="stars"><svg class="star" aria-hidden="true"><use href="#ph-star"/></svg></span> <span class="num">5.0</span> · 93 Google reviews</span>
             <span class="chip"><span class="num">2,000+</span> systems installed</span>
-          </div>
-
-          <!-- day/night toggle: solar powers the home around the clock (manual crossfade, default Morning) -->
-          <div class="hero-toggle reveal d4" role="radiogroup" aria-label="See this home in daylight or at night">
-            <input type="radio" class="hero-toggle-input" name="hero-tod" id="tod-day" value="day" checked>
-            <label class="hero-toggle-pill" for="tod-day"><svg class="ht-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="128" y1="40" x2="128" y2="16"/><circle cx="128" cy="128" r="56"/><line x1="64" y1="64" x2="48" y2="48"/><line x1="64" y1="192" x2="48" y2="208"/><line x1="192" y1="64" x2="208" y2="48"/><line x1="192" y1="192" x2="208" y2="208"/><line x1="40" y1="128" x2="16" y2="128"/><line x1="128" y1="216" x2="128" y2="240"/><line x1="216" y1="128" x2="240" y2="128"/></svg>Morning</label>
-            <input type="radio" class="hero-toggle-input" name="hero-tod" id="tod-night" value="night">
-            <label class="hero-toggle-pill" for="tod-night"><svg class="ht-ic" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z"/></svg>Night</label>
           </div>
         </div>
 
@@ -2565,18 +2499,6 @@
         }
       });
     });
-
-    // Day/Night hero toggle — manual crossfade between hero-day and hero-night (default Morning).
-    (function () {
-      var hero = document.querySelector('.hero');
-      if (!hero) return;
-      var radios = hero.querySelectorAll('input[name="hero-tod"]');
-      radios.forEach(function (r) {
-        r.addEventListener('change', function () {
-          hero.classList.toggle('is-night', this.value === 'night');
-        });
-      });
-    })();
 
     // Reviews carousel: responsive 3/2/1-up sliding window (advance by 1).
     // Auto-advance, pause on hover/focus/touch, arrows, dynamic dots, swipe, resize-aware.
