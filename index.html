@@ -536,7 +536,7 @@
       z-index: -2;
       background-image: url("images/ai/hero-home.jpg");
       background-size: cover;
-      background-position: center;
+      background-position: center 75%;
     }
     .hero::after {
       content: "";
@@ -1748,6 +1748,9 @@
 
       .nav-toggle { display: flex; }
       .hero { min-height: 85vh; min-height: calc(100svh - var(--announce-h)); }
+      /* mobile crop: the van sits on the right of the image — shift the focal point
+         right so it reads in the narrow viewport (left stays dark for headline legibility) */
+      .hero::before { background-position: 78% center; }
       .hero h1 { text-shadow: 0 2px 14px rgba(0,0,0,0.35); }
     }
 
