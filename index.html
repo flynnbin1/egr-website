@@ -2639,15 +2639,28 @@
   <script>
     (function () {
       var KEY = 'egr-cookie-consent';
+      var META_PIXEL_ID = '892188746369776';
       var bar = document.getElementById('cookieBar');
       function hide(){ if (bar) bar.hidden = true; }
+      // Meta Pixel — consent-gated: the fbevents.js loader is injected and fbq init + PageView
+      // run ONLY here, after Accept (or on a later visit where 'accepted' is already stored).
+      // Nothing Meta-related touches the page before consent. Runs once per page.
+      function fireMetaPixel(){
+        if (window._egrMetaPixelLoaded) return;
+        window._egrMetaPixelLoaded = true;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', META_PIXEL_ID);
+        fbq('track', 'PageView');
+        if (window.EGR_PIXEL_LEAD) { fbq('track', 'Lead'); }   // per-page opt-in (e.g. thank-you): same consent gate + once-guard
+      }
       function accept(){
         try { localStorage.setItem(KEY, 'accepted'); } catch (e) {}
         if (typeof gtag === 'function') {
           gtag('consent', 'update', { ad_storage:'granted', analytics_storage:'granted', ad_user_data:'granted', ad_personalization:'granted' });
         }
         window.dataLayer = window.dataLayer || [];
-        dataLayer.push({ event: 'consent_accepted' });   // GTM fires Google + Meta tags on this event
+        dataLayer.push({ event: 'consent_accepted' });   // consent signal for any GTM-managed tags
+        fireMetaPixel();                                  // Meta Pixel: load + PageView now (first acceptance)
         hide();
       }
       function reject(){
@@ -2657,6 +2670,7 @@
       var stored = null;
       try { stored = localStorage.getItem(KEY); } catch (e) {}
       if (!stored && bar) { bar.hidden = false; }   // show on first visit only
+      if (stored === 'accepted') { fireMetaPixel(); }   // returning visitor already consented - fire on load
       var a = document.getElementById('cookieAccept'), r = document.getElementById('cookieReject');
       if (a) a.addEventListener('click', accept);
       if (r) r.addEventListener('click', reject);
