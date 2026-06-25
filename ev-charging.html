@@ -1696,18 +1696,19 @@
         gap: 2rem;
       }
       .hero-copy { max-width: 40rem; }
-      .hero-form { max-width: 100%; margin-left: 0; position: relative; }
-      /* mobile: solid brand-green block behind the form; the photo + scrim stay behind the copy above */
-      .hero-form::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        top: -1.5rem;          /* start at the copy/form gap so no photo sliver shows between them */
-        bottom: -100vh;        /* run to the hero's bottom edge (clipped by .hero overflow:hidden) */
-        background: var(--color-forest);
+      .hero-form { max-width: 100%; margin-left: 0; }
+      /* mobile split: keep the photo (light scrim) behind the copy at the top, then ramp the
+         existing hero scrim to a solid brand-green block behind the form below. Done on the
+         existing .hero::after layer so nothing can mask the top image. */
+      .hero::after {
+        background: linear-gradient(
+          to bottom,
+          rgba(var(--rgb-forest), 0.5) 0%,
+          rgba(var(--rgb-forest), 0.5) 28%,
+          rgba(var(--rgb-forest), 0.92) 46%,
+          var(--color-forest) 55%,
+          var(--color-forest) 100%
+        );
       }
     }
 
