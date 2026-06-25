@@ -1704,17 +1704,17 @@
          The form below sits on the solid green base. */
       .hero { background: var(--color-forest); }
       .hero::before {
-        background-size: 100% auto;          /* full scene width, whole image visible (no tight crop) */
+        background-size: 200% auto;          /* taller band: photo now reaches down below the trust chips */
         background-position: top center;
         background-repeat: no-repeat;
       }
       .hero::after {
         background: linear-gradient(
           to bottom,
-          rgba(var(--rgb-forest), 0.40) 0%,   /* light scrim over the photo so it reads as a real photo */
-          rgba(var(--rgb-forest), 0.40) 20%,
-          rgba(var(--rgb-forest), 0.70) 38%,
-          var(--color-forest) 52%,            /* solid brand green from here down (behind the form) */
+          rgba(var(--rgb-forest), 0.40) 0%,
+          rgba(var(--rgb-forest), 0.42) 38%,   /* keep the scrim light over the taller photo (down to the chips) */
+          rgba(var(--rgb-forest), 0.88) 48%,
+          var(--color-forest) 55%,             /* solid brand green from here down (behind the form) */
           var(--color-forest) 100%
         );
       }
