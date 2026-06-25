@@ -2048,11 +2048,16 @@
     .cookie-bar-text a { color: var(--color-white); text-decoration: underline; }
     .cookie-bar-actions { display: flex; gap: 0.7rem; flex: 0 0 auto; }
     .cookie-bar button { font: inherit; font-weight: 600; cursor: pointer; border-radius: var(--radius-pill); padding: 0.6rem 1.25rem; border: 1px solid transparent; transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease); }
-    .cookie-accept { background: var(--color-accent); color: var(--color-forest); }
-    .cookie-accept:hover { background: var(--color-white); }
+    .cookie-accept { background: var(--color-cta); color: var(--color-text); }
+    .cookie-accept:hover { background: var(--color-cta-hover); }
     .cookie-reject { background: transparent; color: var(--color-white); border-color: rgba(var(--rgb-white), 0.45); }
     .cookie-reject:hover { border-color: var(--color-white); background: rgba(var(--rgb-white), 0.08); }
-    @media (max-width: 560px) { .cookie-bar-actions { width: 100%; } .cookie-bar-actions button { flex: 1; } }
+    @media (max-width: 560px) {
+      .cookie-bar { padding: 0.85rem 0.95rem; gap: 0.6rem 1rem; left: 0.6rem; right: 0.6rem; bottom: 0.6rem; }
+      .cookie-bar-text { font-size: 0.82rem; line-height: 1.45; flex-basis: 100%; }
+      .cookie-bar-actions { width: 100%; }
+      .cookie-bar-actions button { flex: 1; }
+    }
     img.svc-intro-img, img.savings-img, img.panels-img, img.res-intro-img, img.tech-img { display: block; width: 100%; object-fit: cover; border-radius: var(--radius); }
     /* hero form card: tighter padding so the GHL form fills the card (less boxed-in); only widens the form */
     #quote-form { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
