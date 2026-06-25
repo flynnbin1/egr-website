@@ -1706,16 +1706,23 @@
       }
       .hero-copy { max-width: 40rem; }
       .hero-form { max-width: 100%; margin-left: 0; }
-      /* mobile split: keep the photo (light scrim) behind the copy at the top, then ramp the
-         existing hero scrim to a solid brand-green block behind the form below. Done on the
-         existing .hero::after layer so nothing can mask the top image. */
+      /* mobile: solid brand-green base everywhere; show the FULL hero photo as a zoomed-out
+         band across the top (background-size 100% auto, not a tight cover-crop) so the
+         house/panels scene is recognisable; only a light scrim over it for headline legibility.
+         The form below sits on the solid green base. */
+      .hero { background: var(--color-forest); }
+      .hero::before {
+        background-size: 100% auto;          /* full scene width, whole image visible (no tight crop) */
+        background-position: top center;
+        background-repeat: no-repeat;
+      }
       .hero::after {
         background: linear-gradient(
           to bottom,
-          rgba(var(--rgb-forest), 0.5) 0%,
-          rgba(var(--rgb-forest), 0.5) 28%,
-          rgba(var(--rgb-forest), 0.92) 46%,
-          var(--color-forest) 55%,
+          rgba(var(--rgb-forest), 0.40) 0%,   /* light scrim over the photo so it reads as a real photo */
+          rgba(var(--rgb-forest), 0.40) 20%,
+          rgba(var(--rgb-forest), 0.70) 38%,
+          var(--color-forest) 52%,            /* solid brand green from here down (behind the form) */
           var(--color-forest) 100%
         );
       }
