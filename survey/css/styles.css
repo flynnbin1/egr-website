@@ -1,0 +1,448 @@
+/* ==========================================================================
+   EGR Solar — Lead Survey Funnel
+   Brand tokens pulled from egr.ie: amber #F4A024, near-black #1A1A1A,
+   white, eco-green accent. Poppins (display) + Inter (body).
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --amber: #f4a024;
+  --amber-600: #e08e10;
+  --amber-050: #fef4e2;
+  --ink: #1a1a1a;
+  --ink-80: #33352f;
+  --ink-60: #5c5f57;
+  --ink-40: #8b8e86;
+  --line: #e7e6e1;
+  --line-strong: #d6d5cf;
+  --surface: #ffffff;
+  --surface-soft: #faf9f6;
+  --green: #2e7d32;
+  --green-050: #edf6ed;
+  --danger: #c0392b;
+
+  /* Type */
+  --font-display: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Metrics */
+  --stage-max: 34rem;      /* ~544px content column */
+  --radius: 16px;
+  --radius-sm: 12px;
+  --tap: 3.5rem;           /* 56px min tap target */
+  --header-h: 4.25rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1); /* ease-out-quint */
+  --shadow-card: 0 1px 2px rgba(26, 26, 26, 0.04), 0 6px 20px rgba(26, 26, 26, 0.06);
+  --shadow-pop: 0 10px 30px rgba(26, 26, 26, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+/* App shell: fixed full-viewport column ------------------------------------ */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  min-height: 100vh;
+}
+
+/* Header: logo + progress + back ------------------------------------------- */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.app-header__bar {
+  height: var(--header-h);
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.app-header__logo { height: 2.4rem; width: auto; display: block; }
+.app-header__spacer { flex: 1; }
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink-60);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0.6rem;
+  margin-left: -0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+.back-btn:hover { background: var(--surface-soft); color: var(--ink); }
+.back-btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.back-btn[hidden] { display: none; }
+
+/* Progress bar */
+.progress {
+  height: 6px;
+  background: var(--line);
+  width: 100%;
+}
+.progress__fill {
+  height: 100%;
+  width: 0;
+  background: var(--amber);
+  border-radius: 0 6px 6px 0;
+  transition: width 0.5s var(--ease);
+}
+.progress__label {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+}
+
+/* Stage -------------------------------------------------------------------- */
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) 1.5rem;
+}
+.step {
+  width: 100%;
+  max-width: var(--stage-max);
+  margin: auto 0;
+}
+
+/* Step enter animation */
+@keyframes step-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.step--animate { animation: step-in 0.42s var(--ease) both; }
+
+/* Eyebrow / kicker (used sparingly — welcome only) */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--green);
+  background: var(--green-050);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.kicker svg { width: 1rem; height: 1rem; flex: none; }
+
+/* Non-interactive headings receive programmatic focus for screen readers on
+   step change; suppress the visible focus ring (keep it for real controls). */
+.step__q:focus, [tabindex="-1"]:focus { outline: none; }
+
+.step__q {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 6vw, 2.05rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+.step__help {
+  color: var(--ink-60);
+  font-size: 1rem;
+  margin: 0 0 1.5rem;
+  text-wrap: pretty;
+}
+
+/* Option cards ------------------------------------------------------------- */
+.options { display: grid; gap: 0.75rem; }
+.options--2 { grid-template-columns: 1fr 1fr; }
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease),
+              transform 0.12s var(--ease), box-shadow 0.16s var(--ease);
+}
+.option:hover { border-color: var(--amber); background: var(--amber-050); }
+.option:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.option:active { transform: scale(0.99); }
+.option.is-selected {
+  border-color: var(--amber);
+  background: var(--amber-050);
+  box-shadow: 0 0 0 1.5px var(--amber) inset;
+}
+
+.options--2 .option {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 0.55rem;
+  min-height: 8.5rem;
+  padding: 1.25rem 0.75rem;
+}
+
+.option__icon {
+  flex: none;
+  width: 2.5rem; height: 2.5rem;
+  display: grid; place-items: center;
+  color: var(--green);
+}
+.option__icon svg { width: 1.6rem; height: 1.6rem; }
+.options--2 .option__icon { width: 3rem; height: 3rem; }
+.options--2 .option__icon svg { width: 2.1rem; height: 2.1rem; }
+.option__label { flex: 1; }
+.options--2 .option__label { flex: none; }
+
+/* selection tick */
+.option__tick {
+  flex: none;
+  width: 1.4rem; height: 1.4rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--line-strong);
+  display: grid; place-items: center;
+  transition: background 0.16s var(--ease), border-color 0.16s var(--ease);
+}
+.options--2 .option__tick { display: none; }
+.option__tick svg { width: 0.85rem; height: 0.85rem; color: #fff; opacity: 0; transition: opacity 0.14s var(--ease); }
+.option.is-selected .option__tick { background: var(--amber); border-color: var(--amber); }
+.option.is-selected .option__tick svg { opacity: 1; }
+
+/* Text & form fields ------------------------------------------------------- */
+.field { margin-bottom: 1rem; }
+.field__label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+.field__input, .field select {
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem; /* ≥16px prevents iOS zoom */
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.16s var(--ease), box-shadow 0.16s var(--ease);
+}
+.field__input::placeholder { color: var(--ink-40); }
+.field__input:focus, .field select:focus {
+  outline: none;
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(244, 160, 36, 0.18);
+}
+.field__input.has-error, .field select.has-error { border-color: var(--danger); }
+.field__error {
+  display: none;
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+.field__error.show { display: block; }
+
+/* honeypot */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Buttons ------------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0.95rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), transform 0.12s var(--ease), box-shadow 0.18s var(--ease);
+}
+.btn--primary {
+  background: var(--amber);
+  color: var(--ink);
+  box-shadow: 0 6px 16px rgba(244, 160, 36, 0.28);
+}
+.btn--primary:hover { background: var(--amber-600); }
+.btn--primary:active { transform: translateY(1px); }
+.btn--primary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.btn--primary[disabled] { opacity: 0.6; cursor: progress; box-shadow: none; }
+.btn__spinner {
+  width: 1.1rem; height: 1.1rem;
+  border: 2px solid rgba(26,26,26,0.35);
+  border-top-color: var(--ink);
+  border-radius: 999px;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.step__actions { margin-top: 1.25rem; }
+
+/* Welcome screen ----------------------------------------------------------- */
+.welcome__hero {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 16 / 10;
+}
+.welcome__hero img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.welcome__hero-badge {
+  position: absolute;
+  left: 0.85rem; bottom: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(26, 26, 26, 0.82);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  backdrop-filter: blur(2px);
+  white-space: nowrap;
+}
+.welcome__hero-badge svg { width: 0.95rem; height: 0.95rem; flex: none; }
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-80);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+}
+.trust svg { width: 1rem; height: 1rem; color: var(--green); flex: none; }
+.trust .star { color: var(--amber); }
+
+.reassure {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-60);
+}
+.reassure svg { width: 1.05rem; height: 1.05rem; color: var(--green); flex: none; margin-top: 0.1rem; }
+
+.legal {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: var(--ink-40);
+  text-align: center;
+}
+.legal a { color: var(--ink-60); }
+
+/* Thank-you ---------------------------------------------------------------- */
+.thanks { text-align: center; }
+.thanks__check {
+  width: 4.5rem; height: 4.5rem;
+  margin: 0 auto 1.25rem;
+  border-radius: 999px;
+  background: var(--green-050);
+  color: var(--green);
+  display: grid; place-items: center;
+  animation: pop 0.5s var(--ease) both;
+}
+.thanks__check svg { width: 2.4rem; height: 2.4rem; }
+@keyframes pop { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.thanks__next {
+  text-align: left;
+  margin: 1.5rem auto 0;
+  max-width: 22rem;
+  padding: 0;
+  list-style: none;
+}
+.thanks__next li {
+  display: flex;
+  gap: 0.7rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.thanks__next li:last-child { border-bottom: 0; }
+.thanks__next .num {
+  flex: none;
+  width: 1.6rem; height: 1.6rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: grid; place-items: center;
+}
+
+/* Utility */
+.center { text-align: center; }
+
+/* Larger screens: give the funnel presence without becoming a desktop form - */
+@media (min-width: 768px) {
+  :root { --stage-max: 36rem; }
+  .step__q { font-size: clamp(1.9rem, 3vw, 2.4rem); }
+  .welcome__hero { aspect-ratio: 16 / 9; }
+}
+
+/* Reduced motion ----------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .step--animate, .thanks__check { animation: none; }
+  .progress__fill { transition: none; }
+  .btn__spinner { animation-duration: 1.4s; }
+  * { scroll-behavior: auto; }
+}
