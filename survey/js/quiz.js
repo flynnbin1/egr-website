@@ -11,7 +11,7 @@
    (payload is logged to the console) and NO data leaves the browser.
 --------------------------------------------------------------------------- */
 const CONFIG = {
-  GHL_WEBHOOK_URL: "", // <-- e.g. "https://services.leadconnectorhq.com/hooks/xxxx/webhook-trigger/yyyy"
+  GHL_WEBHOOK_URL: "https://services.leadconnectorhq.com/hooks/71Aq4Kde1PiYPBfYYFSG/webhook-trigger/0584b327-780e-4ccb-9811-8d0c57eb5123",
   SOURCE: "egr-survey-funnel",
 };
 
@@ -78,8 +78,8 @@ const STEPS = [
     options: [
       { value: "Saving money", label: "Cutting my bills", icon: I.euro },
       { value: "Energy independence", label: "Energy independence", icon: I.bolt },
-      { value: "Property value", label: "Adding home value", icon: I.house_up },
-      { value: "Environment", label: "Going greener", icon: I.leaf },
+      { value: "Increasing my property's value", label: "Adding home value", icon: I.house_up },
+      { value: "Helping the environment", label: "Going greener", icon: I.leaf },
     ],
   },
   {
@@ -88,7 +88,7 @@ const STEPS = [
     question: "Roughly what do you spend on electricity a year?",
     help: "A ballpark is fine — it helps us size your system.",
     options: [
-      { value: "Under €1k", label: "Under €1,000", icon: I.euro },
+      { value: "Less than €1k", label: "Under €1,000", icon: I.euro },
       { value: "€1k–€1.5k", label: "€1,000 – €1,500", icon: I.euro },
       { value: "€1.5k–€2k", label: "€1,500 – €2,000", icon: I.euro },
       { value: "€2k+", label: "€2,000+", icon: I.euro },
@@ -111,10 +111,10 @@ const STEPS = [
     question: "Where are you with the SEAI grant?",
     help: "No worries if you're not sure — we handle the whole application for you.",
     options: [
-      { value: "Haven't looked", label: "Haven't looked into it yet", icon: I.search },
-      { value: "Think eligible", label: "I think I'm eligible", icon: I.badge },
-      { value: "Applied", label: "I've applied", icon: I.doc },
-      { value: "Approved/received", label: "Approved or already received", icon: I.check },
+      { value: "Haven't looked into it yet", label: "Haven't looked into it yet", icon: I.search },
+      { value: "I think I'm eligible", label: "I think I'm eligible", icon: I.badge },
+      { value: "I've applied", label: "I've applied", icon: I.doc },
+      { value: "Approved", label: "Approved or already received", icon: I.check },
     ],
   },
   {
@@ -276,6 +276,7 @@ function render() {
           <div class="step__actions">
             <button class="btn btn--primary" id="submitBtn" type="submit">${step.submitLabel}</button>
           </div>
+          <p class="field__error" id="submitError" role="alert" style="text-align:center;margin-top:0.75rem">Sorry — we couldn't send your details just now. Please check your connection and try again.</p>
           <p class="reassure">${I.phone}<span>We'll call you back, usually within the hour. Your details are only used for your quote.</span></p>
           <p class="legal">By submitting, you agree to be contacted by EGR about your enquiry. See our <a href="https://egr.ie/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
         </form>
@@ -412,54 +413,61 @@ function submitContact(step) {
 }
 
 function buildPayload() {
+  // Keys match EGR's existing GoHighLevel custom fields exactly — do not rename.
   return {
-    source: CONFIG.SOURCE,
-    owns_home: answers.owns_home || "",
-    product_interest: answers.product_interest || "",
-    motivation: answers.motivation || "",
-    annual_spend: answers.annual_spend || "",
-    timeframe: answers.timeframe || "",
-    seai_grant: answers.seai_grant || "",
-    county: answers.county || "",
-    eircode: answers.eircode || "",
-    full_name: answers.full_name || "",
+    name: answers.full_name || "",
     phone: answers.phone || "",
     email: answers.email || "",
-    page_url: location.href,
-    submitted_at: new Date().toISOString(),
+    do_you_own_your_home: answers.owns_home || "",
+    what_are_you_looking_for: answers.product_interest || "",
+    what_appeals_to_you_most: answers.motivation || "",
+    how_much_do_you_spend_on_energy_per_year: answers.annual_spend || "",
+    how_soon_are_you_looking_to_get_a_system_installed: answers.timeframe || "",
+    where_are_you_with_the_seai_solar_grant: answers.seai_grant || "",
+    county: answers.county || "",
+    eircode: answers.eircode || "",
   };
 }
 
 async function sendLead() {
   const btn = document.getElementById("submitBtn");
   const label = btn.textContent;
+  const errEl = document.getElementById("submitError");
+  if (errEl) errEl.classList.remove("show");
   btn.disabled = true;
   btn.innerHTML = '<span class="btn__spinner"></span> Sending…';
   const payload = buildPayload();
 
   if (!CONFIG.GHL_WEBHOOK_URL) {
-    // No webhook wired yet — simulate so the flow is fully testable without
-    // sending anything anywhere. Replace CONFIG.GHL_WEBHOOK_URL to go live.
+    // No webhook set — simulate locally (nothing sent). Never runs in production.
     console.info("[EGR survey] No GHL_WEBHOOK_URL set — lead NOT sent. Payload:", payload);
     setTimeout(goThankYou, 700);
     return;
   }
 
+  // GHL inbound webhooks return no CORS headers, so mode:'no-cors' is used so the
+  // browser still delivers the POST. A network failure or timeout rejects and is
+  // caught below; only on successful delivery do we advance to the thank-you screen.
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 12000);
   try {
     await fetch(CONFIG.GHL_WEBHOOK_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      mode: "no-cors",
+      keepalive: true,
       body: JSON.stringify(payload),
+      signal: controller.signal,
     });
-    // GHL inbound webhooks accept the POST; response may be opaque under CORS.
-    // Delivery does not depend on reading the response.
+    clearTimeout(timer);
     goThankYou();
   } catch (err) {
-    console.error("[EGR survey] Lead POST failed:", err);
+    clearTimeout(timer);
+    // Failed to send (offline / timeout / blocked): do NOT show the thank-you
+    // screen, keep every answer in place, and let the user try again.
+    console.error("[EGR survey] Lead submission failed:", err);
     btn.disabled = false;
-    btn.textContent = label;
-    let e = document.getElementById("e_email");
-    if (e) { e.textContent = "Something went wrong sending your details. Please try again."; e.classList.add("show"); }
+    btn.innerHTML = label;
+    if (errEl) errEl.classList.add("show");
   }
 }
 
