@@ -473,17 +473,17 @@ async function sendLead() {
 }
 
 function goThankYou() {
-  index = STEPS.length - 1;
   clearState(); // lead captured — don't resume this session
-  // Push a GTM dataLayer event on thank-you view. No pixel code or IDs here —
-  // GTM handles the tags. county + product interest are included for segmentation.
+  // Push the completion event for GTM, then hand off to the site's /thank-you
+  // page, which fires the consent-gated Meta Lead + your other thank-you-page
+  // conversions on load (cookie consent carries over on the same domain).
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: "survey_complete",
     county: answers.county || "",
     what_are_you_looking_for: answers.product_interest || "",
   });
-  render();
+  window.location.href = "/thank-you";
 }
 
 /* ----- Navigation ---------------------------------------------------------- */
