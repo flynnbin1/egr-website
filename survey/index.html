@@ -6,6 +6,38 @@
   <!-- Served by Vercel at egr.ie/survey (no trailing slash); base makes all
        relative asset paths resolve to /survey/… correctly. -->
   <base href="/survey/" />
+
+  <!-- ============================================================
+       Google Tag Manager + Consent Mode v2  (GDPR cookie gating)
+       Copied verbatim from the rest of egr.ie so /survey gates consent
+       identically. Google tags (GA4 / Google Ads) and the Meta Pixel are
+       configured INSIDE this GTM container to fire on the "consent_accepted"
+       trigger and/or Consent Mode — nothing non-essential fires before accept.
+       ============================================================ -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Default: deny all non-essential storage until the user accepts.
+    gtag('consent', 'default', {
+      ad_storage: 'denied', analytics_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied',
+      functionality_storage: 'granted', security_storage: 'granted'
+    });
+    // Restore a prior ACCEPT before GTM loads.
+    try {
+      if (localStorage.getItem('egr-cookie-consent') === 'accepted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted', analytics_storage: 'granted',
+          ad_user_data: 'granted', ad_personalization: 'granted'
+        });
+        dataLayer.push({ event: 'consent_accepted' });
+      }
+    } catch (e) {}
+  </script>
+  <!-- GTM container loader -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PV2NXGDJ');</script>
+  <!-- End Google Tag Manager -->
+
   <title>Get your free solar quote — EGR Solar</title>
   <meta name="description" content="Answer a few quick questions and get your free EGR solar quote. SEAI grant & 0% VAT fully handled. Serving Munster & South Leinster." />
   <meta name="robots" content="noindex" />
@@ -15,8 +47,43 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Cookie consent bar — styles copied verbatim from egr.ie pages (with the
+       CSS variables they depend on) so the banner looks identical here. -->
+  <style>
+    :root {
+      --color-forest: #1F5400;
+      --color-white: #FFFFFF;
+      --color-cta: #F4A024;
+      --color-cta-hover: #E08E10;
+      --color-text: #1A1A1A;
+      --rgb-white: 255, 255, 255;
+      --radius-lg: 22px;
+      --radius-pill: 9999px;
+    }
+    /* ===== cookie consent bar (GDPR) ===== */
+    .cookie-bar { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 1000; max-width: 64rem; margin-inline: auto; background: var(--color-forest); color: var(--color-white); border-radius: var(--radius-lg); box-shadow: 0 12px 44px rgba(0,0,0,0.28); padding: clamp(1rem, 2.5vw, 1.4rem) clamp(1.1rem, 3vw, 1.6rem); display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.5rem; }
+    .cookie-bar[hidden] { display: none; }
+    .cookie-bar-text { margin: 0; flex: 1 1 22rem; font-size: 0.92rem; line-height: 1.55; color: rgba(var(--rgb-white), 0.92); }
+    .cookie-bar-text a { color: var(--color-white); text-decoration: underline; }
+    .cookie-bar-actions { display: flex; gap: 0.7rem; flex: 0 0 auto; }
+    .cookie-bar button { font: inherit; font-weight: 600; cursor: pointer; border-radius: var(--radius-pill); padding: 0.6rem 1.25rem; border: 1px solid transparent; transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease); }
+    .cookie-accept { background: var(--color-cta); color: var(--color-text); }
+    .cookie-accept:hover { background: var(--color-cta-hover); }
+    .cookie-reject { background: transparent; color: var(--color-white); border-color: rgba(var(--rgb-white), 0.45); }
+    .cookie-reject:hover { border-color: var(--color-white); background: rgba(var(--rgb-white), 0.08); }
+    @media (max-width: 560px) {
+      .cookie-bar { padding: 0.85rem 0.95rem; gap: 0.6rem 1rem; left: 0.6rem; right: 0.6rem; bottom: 0.6rem; }
+      .cookie-bar-text { font-size: 0.82rem; line-height: 1.45; flex-basis: 100%; }
+      .cookie-bar-actions { width: 100%; }
+      .cookie-bar-actions button { flex: 1; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV2NXGDJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <div class="app">
     <header class="app-header">
       <div class="app-header__bar">
@@ -37,6 +104,43 @@
       <!-- Steps are rendered here by js/quiz.js -->
     </main>
   </div>
+
+  <!-- ===== Cookie consent bar (GDPR) — banner + logic copied verbatim from
+       egr.ie pages. Meta Pixel loader intentionally omitted (kept off the page
+       per project rule; configure Meta as a GTM tag on consent_accepted). ===== -->
+  <div class="cookie-bar" id="cookieBar" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <p class="cookie-bar-text">We use essential cookies to make this site work. With your consent we also use analytics and marketing cookies to improve the site and measure our advertising. See our <a href="/cookie-policy">Cookie Policy</a>.</p>
+    <div class="cookie-bar-actions">
+      <button type="button" class="cookie-reject" id="cookieReject">Necessary only</button>
+      <button type="button" class="cookie-accept" id="cookieAccept">Accept all</button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var KEY = 'egr-cookie-consent';
+      var bar = document.getElementById('cookieBar');
+      function hide(){ if (bar) bar.hidden = true; }
+      function accept(){
+        try { localStorage.setItem(KEY, 'accepted'); } catch (e) {}
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', { ad_storage:'granted', analytics_storage:'granted', ad_user_data:'granted', ad_personalization:'granted' });
+        }
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({ event: 'consent_accepted' });   // consent signal for any GTM-managed tags
+        hide();
+      }
+      function reject(){
+        try { localStorage.setItem(KEY, 'rejected'); } catch (e) {}
+        hide();   // consent stays denied — nothing non-essential fires
+      }
+      var stored = null;
+      try { stored = localStorage.getItem(KEY); } catch (e) {}
+      if (!stored && bar) { bar.hidden = false; }   // show on first visit only
+      var a = document.getElementById('cookieAccept'), r = document.getElementById('cookieReject');
+      if (a) a.addEventListener('click', accept);
+      if (r) r.addEventListener('click', reject);
+    })();
+  </script>
 
   <script src="js/quiz.js" defer></script>
 </body>

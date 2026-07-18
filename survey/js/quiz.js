@@ -474,10 +474,14 @@ async function sendLead() {
 function goThankYou() {
   index = STEPS.length - 1;
   clearState(); // lead captured — don't resume this session
-  /* TODO(tracking): fire the GTM / Facebook Pixel conversion event HERE, on
-     thank-you view, to mirror the current thank-you-page conversion. Left
-     intentionally unimplemented — do not change tracking without sign-off.
-     e.g. window.dataLayer && window.dataLayer.push({ event: "survey_lead" }); */
+  // Push a GTM dataLayer event on thank-you view. No pixel code or IDs here —
+  // GTM handles the tags. county + product interest are included for segmentation.
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "survey_complete",
+    county: answers.county || "",
+    what_are_you_looking_for: answers.product_interest || "",
+  });
   render();
 }
 
