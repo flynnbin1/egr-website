@@ -11,7 +11,7 @@
    (payload is logged to the console) and NO data leaves the browser.
 --------------------------------------------------------------------------- */
 const CONFIG = {
-  GHL_WEBHOOK_URL: "https://services.leadconnectorhq.com/hooks/71Aq4Kde1PiYPBfYYFSG/webhook-trigger/0584b327-780e-4ccb-9811-8d0c57eb5123",
+  GHL_WEBHOOK_URL: "https://services.leadconnectorhq.com/hooks/71Aq4Kde1PiYPBfYYFSG/webhook-trigger/9652ca71-6bc7-46d8-bb5a-8131b31d189f",
   SOURCE: "egr-survey-funnel",
 };
 
