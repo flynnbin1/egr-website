@@ -10,9 +10,10 @@
   <!-- ============================================================
        Google Tag Manager + Consent Mode v2  (GDPR cookie gating)
        Copied verbatim from the rest of egr.ie so /survey gates consent
-       identically. Google tags (GA4 / Google Ads) and the Meta Pixel are
-       configured INSIDE this GTM container to fire on the "consent_accepted"
-       trigger and/or Consent Mode — nothing non-essential fires before accept.
+       identically. Google tags fire via this GTM container on the
+       "consent_accepted" trigger / Consent Mode; the Meta Pixel is loaded
+       further down, consent-gated, exactly as on the other pages —
+       nothing non-essential fires before accept.
        ============================================================ -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -105,9 +106,8 @@
     </main>
   </div>
 
-  <!-- ===== Cookie consent bar (GDPR) — banner + logic copied verbatim from
-       egr.ie pages. Meta Pixel loader intentionally omitted (kept off the page
-       per project rule; configure Meta as a GTM tag on consent_accepted). ===== -->
+  <!-- ===== Cookie consent bar (GDPR) — banner + logic (incl. consent-gated
+       Meta Pixel) copied verbatim from egr.ie pages. ===== -->
   <div class="cookie-bar" id="cookieBar" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
     <p class="cookie-bar-text">We use essential cookies to make this site work. With your consent we also use analytics and marketing cookies to improve the site and measure our advertising. See our <a href="/cookie-policy">Cookie Policy</a>.</p>
     <div class="cookie-bar-actions">
@@ -118,8 +118,20 @@
   <script>
     (function () {
       var KEY = 'egr-cookie-consent';
+      var META_PIXEL_ID = '892188746369776';
       var bar = document.getElementById('cookieBar');
       function hide(){ if (bar) bar.hidden = true; }
+      // Meta Pixel — consent-gated: the fbevents.js loader is injected and fbq init + PageView
+      // run ONLY here, after Accept (or on a later visit where 'accepted' is already stored).
+      // Nothing Meta-related touches the page before consent. Runs once per page.
+      function fireMetaPixel(){
+        if (window._egrMetaPixelLoaded) return;
+        window._egrMetaPixelLoaded = true;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', META_PIXEL_ID);
+        fbq('track', 'PageView');
+        if (window.EGR_PIXEL_LEAD) { fbq('track', 'Lead'); }   // per-page opt-in (e.g. thank-you): same consent gate + once-guard
+      }
       function accept(){
         try { localStorage.setItem(KEY, 'accepted'); } catch (e) {}
         if (typeof gtag === 'function') {
@@ -127,6 +139,7 @@
         }
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({ event: 'consent_accepted' });   // consent signal for any GTM-managed tags
+        fireMetaPixel();                                  // Meta Pixel: load + PageView now (first acceptance)
         hide();
       }
       function reject(){
@@ -136,6 +149,7 @@
       var stored = null;
       try { stored = localStorage.getItem(KEY); } catch (e) {}
       if (!stored && bar) { bar.hidden = false; }   // show on first visit only
+      if (stored === 'accepted') { fireMetaPixel(); }   // returning visitor already consented - fire on load
       var a = document.getElementById('cookieAccept'), r = document.getElementById('cookieReject');
       if (a) a.addEventListener('click', accept);
       if (r) r.addEventListener('click', reject);
