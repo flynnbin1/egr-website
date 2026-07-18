@@ -445,24 +445,25 @@ async function sendLead() {
     return;
   }
 
-  // GHL inbound webhooks return no CORS headers, so mode:'no-cors' is used so the
-  // browser still delivers the POST. A network failure or timeout rejects and is
-  // caught below; only on successful delivery do we advance to the thank-you screen.
+  // GHL's webhook endpoint returns CORS headers, so we POST in cors mode with a
+  // proper application/json content-type: this ensures GHL parses the JSON body
+  // into fields, and lets us read the real HTTP status so a genuine failure shows
+  // an error instead of a false thank-you.
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 12000);
   try {
-    await fetch(CONFIG.GHL_WEBHOOK_URL, {
+    const res = await fetch(CONFIG.GHL_WEBHOOK_URL, {
       method: "POST",
-      mode: "no-cors",
-      keepalive: true,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
       signal: controller.signal,
     });
     clearTimeout(timer);
+    if (!res.ok) throw new Error("GHL responded HTTP " + res.status);
     goThankYou();
   } catch (err) {
     clearTimeout(timer);
-    // Failed to send (offline / timeout / blocked): do NOT show the thank-you
+    // Failed to send (offline / timeout / HTTP error): do NOT show the thank-you
     // screen, keep every answer in place, and let the user try again.
     console.error("[EGR survey] Lead submission failed:", err);
     btn.disabled = false;
